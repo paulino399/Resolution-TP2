@@ -2,7 +2,7 @@
 // On désire transmettre un mot binaire de 8 bits de valeur
 // (010010101) 2 en liaison série de type RS232 de niveau
 // TTL à 4800 bauds sans bit de parité et un bit de stop.
-///////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 #include <18f4520.h>
 #use delay (crystal=20MHz)
 #use rs232(baud=4800, PARITY=N, BITS=8, STOP=1, xmit=PIN_C6)
