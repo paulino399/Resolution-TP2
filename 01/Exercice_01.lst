@@ -1,0 +1,138 @@
+CCS PCH C Compiler, Version 5.059, 5967               10-oct.-23 09:15
+
+               Filename:   C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\01\Exercice_01.lst
+
+               ROM used:   172 bytes (1%)
+                           Largest free fragment is 32596
+               RAM used:   8 (1%) at main() level
+                           9 (1%) worst case
+               Stack used: 1 locations
+               Stack size: 31
+
+*
+0000:  GOTO   006C
+.................... // Emission d'une trame série de type RS232 avec l'UART 
+.................... // Sortie :  PortC : TX=RC6 (pour info RX=RC7) 
+.................... #include <18f4520.h> 
+.................... //////////// Standard Header file for the PIC18F4520 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F4520 
+....................  
+.................... #list 
+....................  
+.................... #use delay (crystal=20MHz) 
+*
+0046:  CLRF   FEA
+0048:  MOVLW  08
+004A:  MOVWF  FE9
+004C:  MOVF   FEF,W
+004E:  BZ    006A
+0050:  MOVLW  06
+0052:  MOVWF  01
+0054:  CLRF   00
+0056:  DECFSZ 00,F
+0058:  BRA    0056
+005A:  DECFSZ 01,F
+005C:  BRA    0054
+005E:  MOVLW  7B
+0060:  MOVWF  00
+0062:  DECFSZ 00,F
+0064:  BRA    0062
+0066:  DECFSZ FEF,F
+0068:  BRA    0050
+006A:  RETURN 0
+.................... #use rs232(baud=19200, PARITY=N, BITS=8, STOP=1, xmit=PIN_C6) 
+*
+0004:  BCF    F94.6
+0006:  BCF    F8B.6
+0008:  MOVLW  08
+000A:  MOVWF  01
+000C:  BRA    000E
+000E:  NOP   
+0010:  BSF    01.7
+0012:  BRA    0030
+0014:  BCF    01.7
+0016:  RRCF   07,F
+0018:  BTFSC  FD8.0
+001A:  BSF    F8B.6
+001C:  BTFSS  FD8.0
+001E:  BCF    F8B.6
+0020:  BSF    01.6
+0022:  BRA    0030
+0024:  BCF    01.6
+0026:  DECFSZ 01,F
+0028:  BRA    0016
+002A:  BRA    002C
+002C:  NOP   
+002E:  BSF    F8B.6
+0030:  MOVLW  50
+0032:  MOVWF  FE9
+0034:  DECFSZ FE9,F
+0036:  BRA    0034
+0038:  BRA    003A
+003A:  BTFSC  01.7
+003C:  BRA    0014
+003E:  BTFSC  01.6
+0040:  BRA    0024
+0042:  GOTO   0090 (RETURN)
+.................... // Déclaration des variables 
+.................... unsigned int16 TEMPO; // variable TEMPO en 16 bits 
+.................... unsigned int8 DATA; // variable DATA en 8 bits 
+.................... // PROGRAMME PRINCIPAL 
+.................... void main() 
+*
+006C:  CLRF   FF8
+006E:  BCF    FD0.7
+0070:  BCF    F94.6
+0072:  BSF    F8B.6
+0074:  MOVF   FC1,W
+0076:  ANDLW  C0
+0078:  IORLW  0F
+007A:  MOVWF  FC1
+007C:  MOVLW  07
+007E:  MOVWF  FB4
+.................... { 
+....................  TEMPO=10; 
+0080:  CLRF   05
+0082:  MOVLW  0A
+0084:  MOVWF  04
+....................  DATA=0x31; // = 0b00110001 = 49 
+0086:  MOVLW  31
+0088:  MOVWF  06
+....................  while(TRUE) 
+....................  {  
+....................  printf("%c",DATA); // envoi du contenu de DATA (en binaire) sur Tx en RS232 
+008A:  MOVFF  06,07
+008E:  BRA    0004
+....................  delay_ms(TEMPO); 
+0090:  MOVFF  05,07
+0094:  INCF   07,F
+0096:  DECF   07,F
+0098:  BTFSC  FD8.2
+009A:  BRA    00A2
+009C:  SETF   08
+009E:  RCALL  0046
+00A0:  BRA    0096
+00A2:  MOVFF  04,08
+00A6:  RCALL  0046
+00A8:  BRA    008A
+....................        } 
+....................   } 
+00AA:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C200   HS FCMEN IESO
+   Word  2: 1E1E   PUT BROWNOUT BORV21 NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 0081   STVREN NOLVP NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

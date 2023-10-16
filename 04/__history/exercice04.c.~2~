@@ -1,0 +1,18 @@
+// Réception d'une trame série de type RS232 avec un MCU avec l'UART (sans interruption)
+// Entrée : PortC : RX=RC7 (pour info TX=RC6)
+// Sortie : PortD avec 8 leds
+#include <18f4520.h>
+#use delay (crystal=20MHz)
+#use rs232(baud=4800, PARITY=N, BITS=8, STOP=1, xmit=PIN_C6, rcv=PIN_C7)
+// Déclaration des variables
+unsigned int8 DATA; // variable DATA en 8 bits
+// PROGRAMME PRINCIPAL
+void main()
+{
+ DATA=0 ;
+ while(TRUE)
+ {
+ DATA = getc(); // Lecture de la donnée reçue sur l'UART
+ output_d(DATA) ; // Envoi de DATA sur les leds du PortD 
+}
+}

@@ -1,0 +1,46 @@
+
+ROM used:   188/32768 (1%)
+            188/32768 (1%) including unused fragments
+
+            0.2 Average locations per line
+            31.3 Average locations per statement
+
+RAM used:   8/1536 (1%) at main() level
+            9/1536 (1%) worst case
+
+Stack used: 4 worst case (4 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   25     6 100  exercice03.c
+  844     0   0  ..\..\..\..\..\..\Simestre II\Informatique\PIC_C_Compiler\PICC\Devices\18f4520.h
+----- -----
+  869     6 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     38  10    1             @delay_ms1
+0     82  22    1             @PUTCHAR_1_
+0     64  17    1    102  2.3  main
+ Inline         0    186  5.5  @cinit1
+
+Program metrics:
+    Functions               2
+    Statements              6
+    Comments                167
+    Volume (V)              352
+    Difficulty (D)          7.3
+    Effort to implement (E) 2550
+    Time to implement (T)   2 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    176
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE   184  32580  
+
+
+

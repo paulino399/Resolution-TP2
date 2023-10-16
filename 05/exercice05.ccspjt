@@ -1,0 +1,27 @@
+[PROJECT]
+Target=exercice05.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.059
+Compiler=PCH
+[Target Data]
+FileList=exercice05.c
+[exercice05.c]
+Type=4
+[mru-list]
+1=exercice05.c
+[Units]
+Count=1
+1=exercice05 (main)
+
+[defines]
+buildcount=1
+
+[ProjectLog]
+Days=1
+D1=10-10-2023
+D1_L=5
+D1_L1=[38350]Stopped Editing.
+D1_L2=[38856]Started Editing.
+D1_L3=[39188]Stopped Editing.
+D1_L4=[40343]Started Editing.
+D1_L5=[40415]Project Closed.

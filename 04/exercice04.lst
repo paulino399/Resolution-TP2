@@ -1,0 +1,83 @@
+CCS PCH C Compiler, Version 5.059, 5967               10-oct.-23 11:27
+
+               Filename:   C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\04\exercice04.lst
+
+               ROM used:   62 bytes (0%)
+                           Largest free fragment is 32706
+               RAM used:   5 (0%) at main() level
+                           5 (0%) worst case
+               Stack used: 0 locations
+               Stack size: 31
+
+*
+0000:  GOTO   0004
+.................... /////////////////////////////////////////////////////////////////////////////// 
+.................... // On désire recevoir et afficher sur des leds une donnée au format de 8 bits  
+.................... //en liaison série de type RS232 de niveau TTL à 4800 bauds sans bit de parité  
+.................... //et un bit de stop. 
+.................... /////////////////////////////////////////////////////////////////////////////// 
+.................... #include <18f4520.h> 
+.................... //////////// Standard Header file for the PIC18F4520 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F4520 
+....................  
+.................... #list 
+....................  
+.................... #use delay (crystal=20MHz) 
+.................... #use rs232(baud=4800, PARITY=N, BITS=8, STOP=1, xmit=PIN_C6, rcv=PIN_C7) 
+.................... // Déclaration des variables 
+.................... unsigned int8 DATA; // variable DATA en 8 bits 
+.................... // PROGRAMME PRINCIPAL 
+.................... void main() 
+0004:  CLRF   FF8
+0006:  BCF    FD0.7
+0008:  BSF    FB8.3
+000A:  MOVLW  11
+000C:  MOVWF  FAF
+000E:  MOVLW  04
+0010:  MOVWF  FB0
+0012:  MOVLW  A6
+0014:  MOVWF  FAC
+0016:  MOVLW  90
+0018:  MOVWF  FAB
+001A:  NOP   
+001C:  NOP   
+001E:  MOVF   FC1,W
+0020:  ANDLW  C0
+0022:  IORLW  0F
+0024:  MOVWF  FC1
+0026:  MOVLW  07
+0028:  MOVWF  FB4
+.................... { 
+....................  DATA=0; //0b01001010; // Mot binaire à transmettre; 
+002A:  CLRF   04
+....................  while(TRUE) 
+....................  { 
+....................  DATA = getc(); // Lecture de la donnée reçue sur l'UART 
+002C:  BTFSS  F9E.5
+002E:  BRA    002C
+0030:  MOVFF  FAE,04
+....................  output_d(DATA) ; // Envoi de DATA sur les leds du PortD  
+0034:  CLRF   F95
+0036:  MOVFF  04,F8C
+003A:  BRA    002C
+....................   } 
+.................... } 
+003C:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C200   HS FCMEN IESO
+   Word  2: 1E1E   PUT BROWNOUT BORV21 NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 0081   STVREN NOLVP NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

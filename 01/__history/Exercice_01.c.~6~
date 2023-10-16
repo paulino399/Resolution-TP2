@@ -1,0 +1,19 @@
+// Emission d'une trame série de type RS232 avec l'UART
+// Sortie :  PortC : TX=RC6 (pour info RX=RC7)
+#include <18f4520.h>
+#use delay (crystal=8MHz)
+#use rs232(baud=19200, PARITY=N, BITS=8, STOP=1, xmit=PIN_C6)
+// Déclaration des variables
+unsigned int16 TEMPO; // variable TEMPO en 16 bits
+unsigned int8 DATA; // variable DATA en 8 bits
+// PROGRAMME PRINCIPAL
+void main()
+{
+ TEMPO=10;
+ DATA=0x31; // = 0b00110001 = 49
+ while(TRUE)
+ { 
+ printf("%c",DATA); // envoi du contenu de DATA (en binaire) sur Tx en RS232
+ delay_ms(TEMPO);
+       }
+  }

@@ -1,0 +1,12 @@
+ÀÄexercice02
+   ÀÄmain  0/68  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄ@PRINTF_D_626  0/172  Ram=6
+      ³  ÃÄ@DIV88  0/40  Ram=3
+      ³  ÃÄ@DIV88  0/40  Ram=3
+      ³  ÃÄ@PUTCHAR_1_  0/64  Ram=1
+      ³  ÃÄ@PUTCHAR_1_  0/64  Ram=1
+      ³  ÃÄ@PUTCHAR_1_  0/64  Ram=1
+      ³  ÀÄ@PUTCHAR_1_  0/64  Ram=1
+      ÃÄ@delay_ms1  0/38  Ram=1
+      ÀÄ@delay_ms1  0/38  Ram=1

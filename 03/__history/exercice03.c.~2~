@@ -1,0 +1,20 @@
+// On désire transmettre un mot binaire de 8 bits de valeur
+//(010010101) 2 en liaison série de type RS232 de niveau
+//TTL à 4800 bauds sans bit de parité et un bit de stop.
+#include <18f4520.h>
+#use delay (crystal=20MHz)
+#use rs232(baud=4800, PARITY=N, BITS=8, STOP=1, xmit=PIN_C6)
+// Déclaration des variables
+unsigned int16 TEMPO; // variable TEMPO en 16 bits
+unsigned int8 DATA; // variable DATA en 8 bits
+// PROGRAMME PRINCIPAL
+void main()
+{
+ TEMPO=10;
+ DATA=0x31; // = 0b00110001 = 49
+ while(TRUE)
+ {
+ printf("%c",DATA); // envoi du contenu de DATA (en code ASCII) sur Tx en RS232
+ delay_ms(TEMPO);
+ }
+}

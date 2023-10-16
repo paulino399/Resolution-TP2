@@ -1,0 +1,48 @@
+[PROJECT]
+Target=Exercice_01.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.059
+Compiler=PCH
+[Target Data]
+FileList=Exercice_01.c
+[Exercice_01.c]
+Type=4
+[mru-list]
+1=Exercice_01.c
+
+[defines]
+buildcount=6
+
+[ProjectLog]
+Days=3
+D1=06-10-2023
+D1_L=8
+D1_L1=[62425]Started Editing.
+D1_L2=[62804]Stopped Editing.
+D1_L3=[62846]Started Editing.
+D1_L4=[68997]Stopped Editing.
+D1_L5=[75706]Started Editing.
+D1_L6=[76017]Stopped Editing.
+D1_L7=[76045]Started Editing.
+D1_L8=[76352]Stopped Editing.
+D2=07-10-2023
+D2_L=2
+D2_L1=[48463]Started Editing.
+D2_L2=[48763]Stopped Editing.
+D3=10-10-2023
+D3_L=5
+D3_L1=[33119]Project Opened.
+D3_L2=[33337]Started Editing.
+D3_L3=[33638]Stopped Editing.
+D3_L4=[33763]Started Editing.
+D3_L5=[33840]Project Closed.
+
+[Opened Files]
+1=Exercice_01.c
+t1=1
+Count=2
+2=..\02\exercice02.c
+t2=1
+[Units]
+Count=1
+1=Exercice_01 (main)

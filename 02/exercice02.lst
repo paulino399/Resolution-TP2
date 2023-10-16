@@ -1,0 +1,232 @@
+CCS PCH C Compiler, Version 5.059, 5967               10-oct.-23 10:30
+
+               Filename:   C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\02\exercice02.lst
+
+               ROM used:   386 bytes (1%)
+                           Largest free fragment is 32382
+               RAM used:   8 (1%) at main() level
+                           16 (1%) worst case
+               Stack used: 4 locations
+               Stack size: 31
+
+*
+0000:  GOTO   013E
+.................... // Emission d'une trame série de type RS232 avec l'UART 
+.................... // Sortie : PortC : TX=RC6 (pour info RX=RC7) 
+.................... #include <18f4520.h> 
+.................... //////////// Standard Header file for the PIC18F4520 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F4520 
+0004:  MOVF   0E,W
+0006:  CLRF   01
+0008:  SUBWF  0D,W
+000A:  BC    0012
+000C:  MOVFF  0D,00
+0010:  BRA    002A
+0012:  CLRF   00
+0014:  MOVLW  08
+0016:  MOVWF  0F
+0018:  RLCF   0D,F
+001A:  RLCF   00,F
+001C:  MOVF   0E,W
+001E:  SUBWF  00,W
+0020:  BTFSC  FD8.0
+0022:  MOVWF  00
+0024:  RLCF   01,F
+0026:  DECFSZ 0F,F
+0028:  BRA    0018
+002A:  RETURN 0
+*
+006C:  MOVLW  20
+006E:  BTFSS  08.4
+0070:  MOVLW  30
+0072:  MOVWF  09
+0074:  MOVFF  07,00
+0078:  BTFSS  07.7
+007A:  BRA    008C
+007C:  COMF   00,F
+007E:  INCF   00,F
+0080:  MOVFF  00,07
+0084:  MOVLW  2D
+0086:  MOVWF  09
+0088:  BSF    08.7
+008A:  BSF    08.0
+008C:  MOVF   01,W
+008E:  MOVFF  07,0D
+0092:  MOVLW  64
+0094:  MOVWF  0E
+0096:  RCALL  0004
+0098:  MOVFF  00,07
+009C:  MOVLW  30
+009E:  ADDWF  01,W
+00A0:  MOVWF  0A
+00A2:  MOVFF  07,0D
+00A6:  MOVLW  0A
+00A8:  MOVWF  0E
+00AA:  RCALL  0004
+00AC:  MOVLW  30
+00AE:  ADDWF  00,W
+00B0:  MOVWF  0C
+00B2:  MOVLW  30
+00B4:  ADDWF  01,W
+00B6:  MOVWF  0B
+00B8:  MOVFF  09,00
+00BC:  MOVLW  30
+00BE:  SUBWF  0A,W
+00C0:  BZ    00CA
+00C2:  BSF    08.1
+00C4:  BTFSC  08.7
+00C6:  BSF    08.2
+00C8:  BRA    00EE
+00CA:  MOVFF  09,0A
+00CE:  MOVLW  20
+00D0:  MOVWF  09
+00D2:  MOVLW  30
+00D4:  SUBWF  0B,W
+00D6:  BZ    00E0
+00D8:  BSF    08.0
+00DA:  BTFSC  08.7
+00DC:  BSF    08.1
+00DE:  BRA    00EE
+00E0:  BTFSS  FD8.2
+00E2:  BSF    08.0
+00E4:  BNZ   00EE
+00E6:  MOVFF  0A,0B
+00EA:  MOVLW  20
+00EC:  MOVWF  0A
+00EE:  BTFSC  08.2
+00F0:  BRA    00FC
+00F2:  BTFSC  08.1
+00F4:  BRA    0102
+00F6:  BTFSC  08.0
+00F8:  BRA    0108
+00FA:  BRA    010E
+00FC:  MOVFF  09,0D
+0100:  RCALL  002C
+0102:  MOVFF  0A,0D
+0106:  RCALL  002C
+0108:  MOVFF  0B,0D
+010C:  RCALL  002C
+010E:  MOVFF  0C,0D
+0112:  RCALL  002C
+0114:  GOTO   0166 (RETURN)
+....................  
+.................... #list 
+....................  
+.................... #use delay (crystal=20MHz) 
+0118:  CLRF   FEA
+011A:  MOVLW  08
+011C:  MOVWF  FE9
+011E:  MOVF   FEF,W
+0120:  BZ    013C
+0122:  MOVLW  06
+0124:  MOVWF  01
+0126:  CLRF   00
+0128:  DECFSZ 00,F
+012A:  BRA    0128
+012C:  DECFSZ 01,F
+012E:  BRA    0126
+0130:  MOVLW  7B
+0132:  MOVWF  00
+0134:  DECFSZ 00,F
+0136:  BRA    0134
+0138:  DECFSZ FEF,F
+013A:  BRA    0122
+013C:  RETURN 0
+.................... #use rs232(baud=19200, PARITY=N, BITS=8, STOP=1, xmit=PIN_C6) 
+*
+002C:  BCF    F94.6
+002E:  BCF    F8B.6
+0030:  MOVLW  08
+0032:  MOVWF  01
+0034:  BRA    0036
+0036:  NOP   
+0038:  BSF    01.7
+003A:  BRA    0058
+003C:  BCF    01.7
+003E:  RRCF   0D,F
+0040:  BTFSC  FD8.0
+0042:  BSF    F8B.6
+0044:  BTFSS  FD8.0
+0046:  BCF    F8B.6
+0048:  BSF    01.6
+004A:  BRA    0058
+004C:  BCF    01.6
+004E:  DECFSZ 01,F
+0050:  BRA    003E
+0052:  BRA    0054
+0054:  NOP   
+0056:  BSF    F8B.6
+0058:  MOVLW  50
+005A:  MOVWF  FE9
+005C:  DECFSZ FE9,F
+005E:  BRA    005C
+0060:  BRA    0062
+0062:  BTFSC  01.7
+0064:  BRA    003C
+0066:  BTFSC  01.6
+0068:  BRA    004C
+006A:  RETURN 0
+.................... // Déclaration des variables 
+.................... unsigned int16 TEMPO; // variable TEMPO en 16 bits 
+.................... unsigned int8 DATA; // variable DATA en 8 bits 
+.................... // PROGRAMME PRINCIPAL 
+.................... void main() 
+*
+013E:  CLRF   FF8
+0140:  BCF    FD0.7
+0142:  BCF    F94.6
+0144:  BSF    F8B.6
+0146:  MOVF   FC1,W
+0148:  ANDLW  C0
+014A:  IORLW  0F
+014C:  MOVWF  FC1
+014E:  MOVLW  07
+0150:  MOVWF  FB4
+.................... { 
+....................  TEMPO=10; 
+0152:  CLRF   05
+0154:  MOVLW  0A
+0156:  MOVWF  04
+....................  DATA=0x31; // = 0b00110001 = 49 
+0158:  MOVLW  31
+015A:  MOVWF  06
+....................  while(TRUE) 
+....................  { 
+....................  printf("%i",DATA); // envoi du contenu de DATA (en code ASCII) sur Tx en RS232 
+015C:  MOVFF  06,07
+0160:  MOVLW  18
+0162:  MOVWF  08
+0164:  BRA    006C
+....................  delay_ms(TEMPO); 
+0166:  MOVFF  05,07
+016A:  INCF   07,F
+016C:  DECF   07,F
+016E:  BTFSC  FD8.2
+0170:  BRA    0178
+0172:  SETF   08
+0174:  RCALL  0118
+0176:  BRA    016C
+0178:  MOVFF  04,08
+017C:  RCALL  0118
+017E:  BRA    015C
+....................  } 
+.................... } 
+0180:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C200   HS FCMEN IESO
+   Word  2: 1E1E   PUT BROWNOUT BORV21 NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 0081   STVREN NOLVP NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

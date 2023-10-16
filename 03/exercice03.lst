@@ -1,0 +1,151 @@
+CCS PCH C Compiler, Version 5.059, 5967               10-oct.-23 11:23
+
+               Filename:   C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\03\exercice03.lst
+
+               ROM used:   188 bytes (1%)
+                           Largest free fragment is 32580
+               RAM used:   8 (1%) at main() level
+                           9 (1%) worst case
+               Stack used: 4 locations
+               Stack size: 31
+
+*
+0000:  GOTO   007C
+.................... ///////////////////////////////////////////////////////////////////////////// 
+.................... // On désire transmettre un mot binaire de 8 bits de valeur 
+.................... // (010010101) 2 en liaison série de type RS232 de niveau 
+.................... // TTL à 4800 bauds sans bit de parité et un bit de stop. 
+.................... //////////////////////////////////////////////////////////////////////////// 
+.................... #include <18f4520.h> 
+.................... //////////// Standard Header file for the PIC18F4520 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F4520 
+....................  
+.................... #list 
+....................  
+.................... #use delay (crystal=20MHz) 
+*
+0056:  CLRF   FEA
+0058:  MOVLW  08
+005A:  MOVWF  FE9
+005C:  MOVF   FEF,W
+005E:  BZ    007A
+0060:  MOVLW  06
+0062:  MOVWF  01
+0064:  CLRF   00
+0066:  DECFSZ 00,F
+0068:  BRA    0066
+006A:  DECFSZ 01,F
+006C:  BRA    0064
+006E:  MOVLW  7B
+0070:  MOVWF  00
+0072:  DECFSZ 00,F
+0074:  BRA    0072
+0076:  DECFSZ FEF,F
+0078:  BRA    0060
+007A:  RETURN 0
+.................... #use rs232(baud=4800, PARITY=N, BITS=8, STOP=1, xmit=PIN_C6) 
+*
+0004:  BCF    F94.6
+0006:  BCF    F8B.6
+0008:  MOVLW  08
+000A:  MOVWF  01
+000C:  BRA    000E
+000E:  NOP   
+0010:  BSF    01.7
+0012:  BRA    0030
+0014:  BCF    01.7
+0016:  RRCF   07,F
+0018:  BTFSC  FD8.0
+001A:  BSF    F8B.6
+001C:  BTFSS  FD8.0
+001E:  BCF    F8B.6
+0020:  BSF    01.6
+0022:  BRA    0030
+0024:  BCF    01.6
+0026:  DECFSZ 01,F
+0028:  BRA    0016
+002A:  BRA    002C
+002C:  NOP   
+002E:  BSF    F8B.6
+0030:  MOVLW  01
+0032:  MOVWF  00
+0034:  CLRF   FE9
+0036:  DECFSZ FE9,F
+0038:  BRA    0036
+003A:  DECFSZ 00,F
+003C:  BRA    0034
+003E:  MOVLW  53
+0040:  MOVWF  FE9
+0042:  DECFSZ FE9,F
+0044:  BRA    0042
+0046:  BRA    0048
+0048:  NOP   
+004A:  BTFSC  01.7
+004C:  BRA    0014
+004E:  BTFSC  01.6
+0050:  BRA    0024
+0052:  GOTO   00A0 (RETURN)
+.................... // Déclaration des variables 
+.................... unsigned int16 TEMPO; // variable TEMPO en 16 bits 
+.................... unsigned int8 DATA; // variable DATA en 8 bits 
+.................... // PROGRAMME PRINCIPAL 
+.................... void main() 
+*
+007C:  CLRF   FF8
+007E:  BCF    FD0.7
+0080:  BCF    F94.6
+0082:  BSF    F8B.6
+0084:  MOVF   FC1,W
+0086:  ANDLW  C0
+0088:  IORLW  0F
+008A:  MOVWF  FC1
+008C:  MOVLW  07
+008E:  MOVWF  FB4
+.................... { 
+....................  TEMPO=10; 
+0090:  CLRF   05
+0092:  MOVLW  0A
+0094:  MOVWF  04
+....................  DATA= 0b01001010; // Mot binaire à transmettre 
+0096:  MOVLW  4A
+0098:  MOVWF  06
+....................  while(TRUE) 
+....................  { 
+....................  printf("%c",DATA); // envoi du contenu de DATA (en code ASCII) sur Tx en RS232 
+009A:  MOVFF  06,07
+009E:  BRA    0004
+....................  delay_ms(TEMPO); 
+00A0:  MOVFF  05,07
+00A4:  INCF   07,F
+00A6:  DECF   07,F
+00A8:  BTFSC  FD8.2
+00AA:  BRA    00B2
+00AC:  SETF   08
+00AE:  RCALL  0056
+00B0:  BRA    00A6
+00B2:  MOVFF  04,08
+00B6:  RCALL  0056
+00B8:  BRA    009A
+....................     } 
+.................... } 
+....................  
+00BA:  SLEEP 
+....................  
+
+Configuration Fuses:
+   Word  1: C200   HS FCMEN IESO
+   Word  2: 1E1E   PUT BROWNOUT BORV21 NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 0081   STVREN NOLVP NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

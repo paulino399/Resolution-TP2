@@ -1,0 +1,6 @@
+ÀÄExercice_01
+   ÀÄmain  0/64  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄ@PUTCHAR_1_  0/66  Ram=1
+      ÃÄ@delay_ms1  0/38  Ram=1
+      ÀÄ@delay_ms1  0/38  Ram=1
