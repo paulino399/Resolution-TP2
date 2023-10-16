@@ -10,7 +10,6 @@
 unsigned int16 TEMPO; // variable TEMPO en 16 bits
 unsigned int8 DATA; // variable DATA en 8 bits
 // PROGRAMME PRINCIPAL
-
 void main()
 {
  TEMPO=10;
