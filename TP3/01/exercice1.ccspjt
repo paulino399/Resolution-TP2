@@ -9,9 +9,30 @@ FileList=exercice1.c
 Type=4
 [mru-list]
 1=exercice1.c
+
+[defines]
+buildcount=2
+
+[Opened Files]
+1=..\..\01\Exercice_01.c
+t1=1
+2=..\..\02\exercice02.c
+t2=1
+3=..\..\03\exercice03.c
+t3=1
+4=..\..\04\exercice04.c
+t4=1
+5=..\..\05\exercice05.c
+t5=18
+6=..\..\06\exercice06.c
+t6=1
+7=..\..\07\exercice7_1.c
+t7=24
+8=..\..\07\exercice7_2.c
+t8=12
+9=exercice1.c
+t9=12
+Count=9
 [Units]
 Count=1
 1=exercice1 (main)
-
-[defines]
-buildcount=1
