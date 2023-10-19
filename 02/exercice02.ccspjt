@@ -30,7 +30,7 @@ D1_L6=[37707]Project Opened.
 D1_L7=[37996]Started Editing.
 D1_L8=[38046]Project Closed.
 D2=19-10-2023
-D2_L=10
+D2_L=12
 D2_L1=[46839]Project Opened.
 D2_L2=[47964]Started Editing.
 D2_L3=[48264]Stopped Editing.
@@ -41,6 +41,8 @@ D2_L7=[49869]Stopped Editing.
 D2_L8=[69280]Started Editing.
 D2_L9=[69580]Stopped Editing.
 D2_L10=[69973]Started Editing.
+D2_L11=[70274]Stopped Editing.
+D2_L12=[71443]Started Editing.
 
 [Opened Files]
 1=..\01\Exercice_01.c
