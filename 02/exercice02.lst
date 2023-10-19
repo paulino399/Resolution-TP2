@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.059, 5967               10-oct.-23 10:30
+CCS PCH C Compiler, Version 5.059, 5967               19-oct.-23 13:15
 
                Filename:   C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\02\exercice02.lst
 
@@ -11,8 +11,10 @@ CCS PCH C Compiler, Version 5.059, 5967               10-oct.-23 10:30
 
 *
 0000:  GOTO   013E
+.................... ///////////////////////////////////////////////////////////// 
 .................... // Emission d'une trame série de type RS232 avec l'UART 
 .................... // Sortie : PortC : TX=RC6 (pour info RX=RC7) 
+.................... /////////////////////////////////////////////////////////// 
 .................... #include <18f4520.h> 
 .................... //////////// Standard Header file for the PIC18F4520 device //////////////// 
 .................... /////////////////////////////////////////////////////////////////////////// 
@@ -218,7 +220,7 @@ CCS PCH C Compiler, Version 5.059, 5967               10-oct.-23 10:30
 0178:  MOVFF  04,08
 017C:  RCALL  0118
 017E:  BRA    015C
-....................  } 
+....................   } 
 .................... } 
 0180:  SLEEP 
 

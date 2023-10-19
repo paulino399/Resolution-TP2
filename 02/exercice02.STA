@@ -13,10 +13,10 @@ Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   20     6 100  exercice02.c
+   22     6 100  exercice02.c
   844     0   0  ..\..\..\..\..\..\Simestre II\Informatique\PIC_C_Compiler\PICC\Devices\18f4520.h
 ----- -----
-  864     6 Total
+  866     6 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
@@ -30,14 +30,14 @@ Page ROM  %  RAM    Vol Diff  Functions:
 Program metrics:
     Functions               4
     Statements              6
-    Comments                161
+    Comments                165
     Volume (V)              921
     Difficulty (D)          13.9
     Effort to implement (E) 12763
     Time to implement (T)   12 minutes
     Est Delivered Bugs (B)  0
     Cyclomatic Complexity   6
-    Maintainability (MI)    116
+    Maintainability (MI)    111
 
  Segment     Used  Free
 -----------  ----  ----
