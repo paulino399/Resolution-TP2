@@ -1,0 +1,17 @@
+[PROJECT]
+Target=exercice1.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.059
+Compiler=PCH
+[Target Data]
+FileList=exercice1.c
+[exercice1.c]
+Type=4
+[mru-list]
+1=exercice1.c
+[Units]
+Count=1
+1=exercice1 (main)
+
+[defines]
+buildcount=1

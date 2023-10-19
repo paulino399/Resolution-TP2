@@ -1,0 +1,7 @@
+ÀÄexercice1
+   ÀÄmain  0/134  Ram=2
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄ@I2C_WRITE_1  0/108  Ram=1
+      ÃÄ@I2C_WRITE_1  0/108  Ram=1
+      ÃÄ@I2C_WRITE_1  0/108  Ram=1
+      ÀÄ@I2C_WRITE_1  0/108  Ram=1
