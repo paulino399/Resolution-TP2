@@ -11,7 +11,7 @@ Type=4
 1=exercice02.c
 
 [defines]
-buildcount=6
+buildcount=8
 
 [ProjectLog]
 Days=2

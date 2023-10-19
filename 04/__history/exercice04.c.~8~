@@ -15,11 +15,10 @@ unsigned int8 TEMPO; //variable TEMPO
 void main()
 {
  TEMPO=10;
- DATA=0;//0b10010101; // Mot binaire à transmettre;
+ DATA=0b10010101; // Mot binaire à transmettre;
  while(TRUE)
  {
  DATA = getc(); // Lecture de la donnée reçue sur l'UART
- output_d(DATA) ; // Envoi de DATA sur les leds du PortD
- delay_ms(TEMPO);
+ output_d(DATA) ; // Envoi de DATA sur les leds du PortD 
   }
 }
