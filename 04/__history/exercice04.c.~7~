@@ -10,11 +10,9 @@
 #use rs232(baud=4800, PARITY=N, BITS=8, STOP=1, xmit=PIN_C6, rcv=PIN_C7)
 // Déclaration des variables
 unsigned int8 DATA; // variable DATA en 8 bits
-unsigned int8 TEMPO; //variable TEMPO
 // PROGRAMME PRINCIPAL
 void main()
 {
- TEMPO=10;
  DATA=0b10010101; // Mot binaire à transmettre;
  while(TRUE)
  {
