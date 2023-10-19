@@ -1,20 +1,33 @@
+//////////////////////////////////////////////////////////////////////////////
+//La carte PIC n°1 doit émettre un mot de 8 bits (DATA1) généré à l'aide de 8
+//interrupteurs ET recevoir un mot de 8bits (DATA2) en l'affichant en décimal 
+//sur un module d'affichage LCD.
+//////////////////////////////////////////////////////////////////////////////
 #include <18f4520.h>
-#fuses HS, NOLVP
-#use delay(crystal=8MHz)
-
+#use delay(crystal=20MHz)
 // Configuration de la communication série RS232
-#use rs232(baud=57600, parity=N, bits=8, stop=1, xmit=PIN_C6, rcv=PIN_C7)
+#use rs232(baud=57600, parity=N, bits=8, stop=1, xmit=PIN_C6, rcv=PIN_C7) 
+// Configuration d'LCD
+#define LCD_ENABLE_PIN PIN_D5 //E1
+#define LCD_RS_PIN PIN_D4    //E2
+#define LCD_DATA4 PIN_D0     //D4-D7
+#define LCD_DATA5 PIN_D1
+#define LCD_DATA6 PIN_D2
+#define LCD_DATA7 PIN_D3
+#include <Lcd_eb005.c>  //Apelle de configuration de l'écran LCD
 
 // Déclaration des variables
 unsigned int8 DATA1; // Variable DATA1 en 8 bits
 
 void main()
 {
+
     DATA1 = 0;
+     //// Initialisation de l'afficheur LCD
+   lcd_init();
+   lcd_putc('\f'); // Clear display, set cursor to upper left
     
-    // Initialiser votre LCD ici
-    
-    while (1)
+    while (true)
     {
         // Lire DATA2 depuis les interrupteurs ou d'autres sources
         // Assurez-vous de le mettre dans DATA2
