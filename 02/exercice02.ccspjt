@@ -11,7 +11,7 @@ Type=4
 1=exercice02.c
 
 [defines]
-buildcount=9
+buildcount=12
 
 [ProjectLog]
 Days=2
@@ -30,7 +30,7 @@ D1_L6=[37707]Project Opened.
 D1_L7=[37996]Started Editing.
 D1_L8=[38046]Project Closed.
 D2=19-10-2023
-D2_L=14
+D2_L=16
 D2_L1=[46839]Project Opened.
 D2_L2=[47964]Started Editing.
 D2_L3=[48264]Stopped Editing.
@@ -45,6 +45,8 @@ D2_L11=[70274]Stopped Editing.
 D2_L12=[71443]Started Editing.
 D2_L13=[71747]Stopped Editing.
 D2_L14=[73076]Started Editing.
+D2_L15=[74194]Stopped Editing.
+D2_L16=[74266]Started Editing.
 
 [Opened Files]
 1=..\01\Exercice_01.c
@@ -53,11 +55,13 @@ t1=1
 t2=1
 3=..\03\exercice03.c
 t3=1
-Count=5
+Count=6
 4=..\04\exercice04.c
 t4=1
 5=..\05\exercice05.c
-t5=1
+t5=18
+6=..\06\exercice06.c
+t6=18
 [Units]
 Count=1
 1=exercice02 (main)

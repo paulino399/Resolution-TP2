@@ -10,7 +10,7 @@
 // Sortie : PortD avec 8 leds
 #include <18f4520.h>
 #use delay (crystal=8MHz)
-#use rs232(baud=9600, PARITY=N, BITS=8, STOP=1, xmit=PIN_C6, rcv=PIN_C7)
+#use rs232(baud=9600, PARITY=E, BITS=8, STOP=1, xmit=PIN_C6, rcv=PIN_C7)
 // Déclaration des variables
 unsigned int16 TEMPO; // variable TEMPO en 16 bits
 unsigned int8 DATA; // variable DATA en 8 bits
@@ -28,7 +28,7 @@ VOID RX_DATA (VOID)
 // PROGRAMME PRINCIPAL
 void main()
 {
- DATA=0x95;//0b10010101 Mot binaire à transmettre;
+DATA=0x95;//0b10010101 Mot binaire à transmettre;
 enable_interrupts(GLOBAL); // Activation des interruptions globales
 enable_interrupts(INT_RDA); // Activation de l'interruption de réception de donnée UART
  

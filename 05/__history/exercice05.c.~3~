@@ -28,7 +28,7 @@ VOID RX_DATA (VOID)
 // PROGRAMME PRINCIPAL
 void main()
 {
- DATA=0x95;//0b10010101 Mot binaire à transmettre;
+ DATA=0 ;
 enable_interrupts(GLOBAL); // Activation des interruptions globales
 enable_interrupts(INT_RDA); // Activation de l'interruption de réception de donnée UART
  
