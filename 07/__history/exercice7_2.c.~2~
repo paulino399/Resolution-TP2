@@ -4,6 +4,7 @@
 
 // Configuration de la communication série RS232
 #use rs232(baud=57600, parity=N, bits=8, stop=1, xmit=PIN_C6, rcv=PIN_C7)
+
 // Déclaration des variables
 unsigned int8 DATA2; // Variable DATA2 en 8 bits
 
