@@ -34,9 +34,7 @@ void main()
         
         putc(DATA2); // Émettre DATA2 via RS232
         
-         lcd_gotoxy(1,1);// positionne le curseur 1ère ligne 1er caractère
-         printf(lcd_putc, "mot_b16=%3u", DATA1); //lu unsigned long
- 
+        // Afficher DATA1 sur le LCD (vous devez écrire le code pour cette partie)
     }
 }
 
