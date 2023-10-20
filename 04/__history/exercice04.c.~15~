@@ -21,5 +21,6 @@ void main()
  {
  DATA = getc(); // Lecture de la donnée reçue sur l'UART
  output_d(DATA) ; // Envoi de DATA sur les leds du PortD
+ delay_ms(1000);
   }
 }

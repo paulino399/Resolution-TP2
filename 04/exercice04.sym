@@ -4,21 +4,22 @@
 002     @SCRATCH
 003     @SCRATCH
 004     DATA
+005     TEMPO
 F83     PSP_DATA
 FB4.6   C1OUT
 FB4.7   C2OUT
-FBB     CCP_2
 FBB     CCP_2_LOW
+FBB     CCP_2
 FBC     CCP_2_HIGH
 FBE     CCP_1_LOW
 FBE     CCP_1
 FBF     CCP_1_HIGH
-FE1-FE2 @WRITE_PACKED_MEMORY.P1
-FE1-FE2 @READ_PACKED_MEMORY.P2
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
 FE9-FEA @READ_PACKED_MEMORY.P1
-FE9-FEA @WRITE_PROGRAM_MEMORY.P2
-FE9-FEA @WRITE_PACKED_MEMORY.P3
-FE9-FEA @READ_PROGRAM_MEMORY.P4
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
 FF6-FF8 @READ_PROGRAM_MEMORY.P1
 FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
 
@@ -31,13 +32,13 @@ Project Directory:
     C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\04\
 
 Project Files:
-    exercice04.c                                            [10-oct.-23 11:27  CRC=444F9200]
+    exercice04.c                                            [20-oct.-23 09:11  CRC=EBB1EE7F]
     ..\..\..\..\..\..\Simestre II\Informatique\PIC_C_Compiler\PICC\Devices\18f4520.h [22-avr.-23 21:01  CRC=7B5E14DB]
 
-Source signature=3B0BBBB6
+Source signature=E26E1835
 Program memory checksum=0000
 Program memory CRC=0000
-Hex file CRC=4D85
+Hex file CRC=164C
 
 Units:
     exercice04 (main)

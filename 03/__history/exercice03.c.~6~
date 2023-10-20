@@ -13,12 +13,11 @@ unsigned int8 DATA; // variable DATA en 8 bits
 
 void main()
 {
-      TEMPO=10;
-      DATA=0x95; // Mot binaire à transmettre
+ TEMPO=10;
+ DATA= 0b01001010; // Mot binaire à transmettre
  while(TRUE)
  {
  printf("%c",DATA); // envoi du contenu de DATA (en code ASCII) sur Tx en RS232
- port_d(DATA);
  delay_ms(TEMPO);
     }
 }

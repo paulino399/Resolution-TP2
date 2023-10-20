@@ -1,20 +1,22 @@
-CCS PCH C Compiler, Version 5.059, 5967               10-oct.-23 11:27
+CCS PCH C Compiler, Version 5.059, 5967               20-oct.-23 09:11
 
                Filename:   C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\04\exercice04.lst
 
-               ROM used:   62 bytes (0%)
-                           Largest free fragment is 32706
-               RAM used:   5 (0%) at main() level
-                           5 (0%) worst case
+               ROM used:   64 bytes (0%)
+                           Largest free fragment is 32704
+               RAM used:   6 (0%) at main() level
+                           6 (0%) worst case
                Stack used: 0 locations
                Stack size: 31
 
 *
 0000:  GOTO   0004
 .................... /////////////////////////////////////////////////////////////////////////////// 
-.................... // On désire recevoir et afficher sur des leds une donnée au format de 8 bits  
+.................... // On désire *recevoir* et afficher sur des leds une donnée au format de 8 bits  
 .................... //en liaison série de type RS232 de niveau TTL à 4800 bauds sans bit de parité  
 .................... //et un bit de stop. 
+.................... //Entrée : PortC : RX=RC7 (pour info TX=RC6) 
+.................... // Sortie : PortD avec 8 leds 
 .................... /////////////////////////////////////////////////////////////////////////////// 
 .................... #include <18f4520.h> 
 .................... //////////// Standard Header file for the PIC18F4520 device //////////////// 
@@ -35,6 +37,7 @@ CCS PCH C Compiler, Version 5.059, 5967               10-oct.-23 11:27
 .................... #use rs232(baud=4800, PARITY=N, BITS=8, STOP=1, xmit=PIN_C6, rcv=PIN_C7) 
 .................... // Déclaration des variables 
 .................... unsigned int8 DATA; // variable DATA en 8 bits 
+.................... unsigned int8 TEMPO; //variable TEMPO 
 .................... // PROGRAMME PRINCIPAL 
 .................... void main() 
 0004:  CLRF   FF8
@@ -57,21 +60,24 @@ CCS PCH C Compiler, Version 5.059, 5967               10-oct.-23 11:27
 0026:  MOVLW  07
 0028:  MOVWF  FB4
 .................... { 
-....................  DATA=0; //0b01001010; // Mot binaire à transmettre; 
-002A:  CLRF   04
+....................  
+....................  TEMPO=10; 
+002A:  MOVLW  0A
+002C:  MOVWF  05
+....................  //DATA=0x95;//0b10010101 Mot binaire à transmettre; 
 ....................  while(TRUE) 
 ....................  { 
 ....................  DATA = getc(); // Lecture de la donnée reçue sur l'UART 
-002C:  BTFSS  F9E.5
-002E:  BRA    002C
-0030:  MOVFF  FAE,04
-....................  output_d(DATA) ; // Envoi de DATA sur les leds du PortD  
-0034:  CLRF   F95
-0036:  MOVFF  04,F8C
-003A:  BRA    002C
+002E:  BTFSS  F9E.5
+0030:  BRA    002E
+0032:  MOVFF  FAE,04
+....................  output_d(DATA) ; // Envoi de DATA sur les leds du PortD 
+0036:  CLRF   F95
+0038:  MOVFF  04,F8C
+003C:  BRA    002E
 ....................   } 
 .................... } 
-003C:  SLEEP 
+003E:  SLEEP 
 
 Configuration Fuses:
    Word  1: C200   HS FCMEN IESO

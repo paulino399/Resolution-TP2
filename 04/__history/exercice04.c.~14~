@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// On désire *recevoir* et afficher sur des leds une donnée au format de 8 bits 
+// On désire recevoir et afficher sur des leds une donnée au format de 8 bits 
 //en liaison série de type RS232 de niveau TTL à 4800 bauds sans bit de parité 
 //et un bit de stop.
 //Entrée : PortC : RX=RC7 (pour info TX=RC6)
