@@ -1,5 +1,6 @@
 ÀÄexercice05
    ÃÄmain  0/50  Ram=0
-   ³  ÃÄ@cinit1  (Inline)  Ram=0
-   ³  ÀÄRX_DATA  0/24  Ram=0
-   ÀÄRX_DATA  0/24  Ram=0
+   ³  ÀÄ@cinit1  (Inline)  Ram=0
+   ÀÄRX_DATA  0/42  Ram=1
+      ÃÄ@delay_ms1  0/38  Ram=1
+      ÀÄ@delay_ms1  0/38  Ram=1

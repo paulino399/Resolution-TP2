@@ -1,16 +1,16 @@
-CCS PCH C Compiler, Version 5.059, 5967               10-oct.-23 10:34
+CCS PCH C Compiler, Version 5.059, 5967               20-oct.-23 09:23
 
                Filename:   C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\05\exercice05.lst
 
-               ROM used:   244 bytes (1%)
-                           Largest free fragment is 32520
-               RAM used:   29 (2%) at main() level
-                           29 (2%) worst case
-               Stack used: 5 locations (4 in main + 1 for interrupts)
+               ROM used:   300 bytes (1%)
+                           Largest free fragment is 32464
+               RAM used:   28 (2%) at main() level
+                           30 (2%) worst case
+               Stack used: 2 locations (1 in main + 1 for interrupts)
                Stack size: 31
 
 *
-0000:  GOTO   00C6
+0000:  GOTO   00FE
 *
 0008:  MOVWF  04
 000A:  MOVFF  FD8,05
@@ -35,7 +35,7 @@ CCS PCH C Compiler, Version 5.059, 5967               10-oct.-23 10:34
 0054:  BTFSS  F9D.5
 0056:  GOTO   0060
 005A:  BTFSC  F9E.5
-005C:  GOTO   00AE
+005C:  GOTO   00D4
 0060:  MOVFF  0E,00
 0064:  MOVFF  0F,01
 0068:  MOVFF  10,02
@@ -83,6 +83,25 @@ CCS PCH C Compiler, Version 5.059, 5967               10-oct.-23 10:34
 .................... #list 
 ....................  
 .................... #use delay (crystal=8MHz) 
+00AE:  CLRF   FEA
+00B0:  MOVLW  1D
+00B2:  MOVWF  FE9
+00B4:  MOVF   FEF,W
+00B6:  BZ    00D2
+00B8:  MOVLW  02
+00BA:  MOVWF  01
+00BC:  CLRF   00
+00BE:  DECFSZ 00,F
+00C0:  BRA    00BE
+00C2:  DECFSZ 01,F
+00C4:  BRA    00BC
+00C6:  MOVLW  97
+00C8:  MOVWF  00
+00CA:  DECFSZ 00,F
+00CC:  BRA    00CA
+00CE:  DECFSZ FEF,F
+00D0:  BRA    00B8
+00D2:  RETURN 0
 .................... #use rs232(baud=9600, PARITY=N, BITS=8, STOP=1, xmit=PIN_C6, rcv=PIN_C7) 
 .................... // Déclaration des variables 
 .................... unsigned int16 TEMPO; // variable TEMPO en 16 bits 
@@ -93,57 +112,67 @@ CCS PCH C Compiler, Version 5.059, 5967               10-oct.-23 10:34
 .................... VOID RX_DATA (VOID) 
 .................... { 
 ....................  IF(kbhit()) // Test si le buffer (tampon) est plein 
-00AE:  BTFSS  F9E.5
-00B0:  BRA    00C0
+00D4:  BTFSS  F9E.5
+00D6:  BRA    00F8
 .................... {  
-....................  DATA = getc(); // Lecture de la donnée reçue dans le buffer (tampon) de réception 
-00B2:  BTFSS  F9E.5
-00B4:  BRA    00B2
-00B6:  MOVFF  FAE,1C
-....................  output_d(DATA) ; // Envoi de DATA sur les leds du PortD  
-00BA:  CLRF   F95
-00BC:  MOVFF  1C,F8C
+....................  
+....................  printf("%c",DATA);//envoi du contenu de DATA (en code ASCII) sur Tx en RS232 
+00D8:  MOVF   1B,W
+00DA:  BTFSS  F9E.4
+00DC:  BRA    00DA
+00DE:  MOVWF  FAD
+.................... delay_ms(TEMPO); 
+00E0:  MOVFF  1A,1C
+00E4:  INCF   1C,F
+00E6:  DECF   1C,F
+00E8:  BTFSC  FD8.2
+00EA:  BRA    00F2
+00EC:  SETF   1D
+00EE:  RCALL  00AE
+00F0:  BRA    00E6
+00F2:  MOVFF  19,1D
+00F6:  RCALL  00AE
 ....................  } 
-00C0:  BCF    F9E.5
-00C2:  GOTO   0060
+00F8:  BCF    F9E.5
+00FA:  GOTO   0060
 .................... } 
 .................... // PROGRAMME PRINCIPAL 
 .................... void main() 
-00C6:  CLRF   FF8
-00C8:  BCF    FD0.7
-00CA:  BSF    07.7
-00CC:  BCF    FB8.3
-00CE:  MOVLW  0C
-00D0:  MOVWF  FAF
-00D2:  MOVLW  A2
-00D4:  MOVWF  FAC
-00D6:  MOVLW  90
-00D8:  MOVWF  FAB
-00DA:  NOP   
-00DC:  NOP   
-00DE:  MOVF   FC1,W
-00E0:  ANDLW  C0
-00E2:  IORLW  0F
-00E4:  MOVWF  FC1
-00E6:  MOVLW  07
-00E8:  MOVWF  FB4
+00FE:  CLRF   FF8
+0100:  BCF    FD0.7
+0102:  BSF    07.7
+0104:  BCF    FB8.3
+0106:  MOVLW  0C
+0108:  MOVWF  FAF
+010A:  MOVLW  A2
+010C:  MOVWF  FAC
+010E:  MOVLW  90
+0110:  MOVWF  FAB
+0112:  NOP   
+0114:  NOP   
+0116:  MOVF   FC1,W
+0118:  ANDLW  C0
+011A:  IORLW  0F
+011C:  MOVWF  FC1
+011E:  MOVLW  07
+0120:  MOVWF  FB4
 .................... { 
-....................  DATA=0 ; 
-00EA:  CLRF   1C
+....................  DATA=0x95;//0b10010101 Mot binaire à transmettre; 
+0122:  MOVLW  95
+0124:  MOVWF  1B
 .................... enable_interrupts(GLOBAL); // Activation des interruptions globales 
-00EC:  MOVLW  C0
-00EE:  IORWF  FF2,F
+0126:  MOVLW  C0
+0128:  IORWF  FF2,F
 .................... enable_interrupts(INT_RDA); // Activation de l'interruption de réception de donnée UART 
-00F0:  BSF    F9D.5
+012A:  BSF    F9D.5
 ....................   
 ....................  while(TRUE) 
 ....................  { 
-....................    RX_DATA(); 
-00F2:  BSF    F9E.5
-00F4:  BRA    00F2
+012C:  BRA    012C
+....................   
 ....................   } 
 .................... } 
-00F6:  SLEEP 
+012E:  SLEEP 
 
 Configuration Fuses:
    Word  1: C200   HS FCMEN IESO

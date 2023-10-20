@@ -1,10 +1,9 @@
-F N "main" 0 10 ""
-D G "__PCH__" 0 21 ""5.059""
-D G "__DEVICE__" 0 21 "4520"
-D G "__DATE__" 0 21 ""10-oct.-23""
-D G "__TIME__" 0 21 ""10:34:12""
-D G "_UNICODE" 0 21 ""?""
-D G "__EVAL" 0 21 ""?"" "On désire émettre d'une 1ère carte PIC un mot de 8 bits généré à l'aide d'une"
+D G "__PCH__" 0 42 ""5.059""
+D G "__DEVICE__" 0 42 "4520"
+D G "__DATE__" 0 42 ""20-oct.-23""
+D G "__TIME__" 0 42 ""09:23:57""
+D G "_UNICODE" 0 42 ""?""
+D G "__EVAL" 0 42 ""?"" "On désire émettre d'une 1ère carte PIC un mot de 8 bits généré à l'aide d'une"
 c L "set_tris_a" 1 1 6 "FUNCTION"
 f N "set_tris_a" 1 43 ""
 v L "value" 1 43 "int8" `54 
@@ -1202,10 +1201,10 @@ F N "RX_DATA" 0 20 ""
 F G "RX_DATA" 0 21 "void()" `632 
 C L "RX_DATA" 0 14 1 "FUNCTION"
 C L "RX_DATA" 0 14 1 "FUNCTION"
-C L "RX_DATA" 0 14 1 "FUNCTION"
 C L "main" 0 14 1 "FUNCTION"
-F N "main" 0 29 ""
-F G "main" 0 30 "void()" `633 
+F N "main" 0 30 ""
+F G "main" 0 31 "void()" `634 
+C L "main" 0 14 1 "FUNCTION"
 C L "main" 0 14 1 "FUNCTION"
 C L "main" 0 14 1 "FUNCTION"
 F B "reset_cpu" 0 0

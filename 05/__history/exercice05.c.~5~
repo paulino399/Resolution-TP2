@@ -21,7 +21,7 @@ VOID RX_DATA (VOID)
 {
  IF(kbhit()) // Test si le buffer (tampon) est plein
 { 
-
+port_d(DATA);
  printf("%c",DATA);//envoi du contenu de DATA (en code ASCII) sur Tx en RS232
 delay_ms(TEMPO);
  }

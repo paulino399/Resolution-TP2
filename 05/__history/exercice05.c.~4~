@@ -21,9 +21,8 @@ VOID RX_DATA (VOID)
 {
  IF(kbhit()) // Test si le buffer (tampon) est plein
 { 
-
- printf("%c",DATA);//envoi du contenu de DATA (en code ASCII) sur Tx en RS232
-delay_ms(TEMPO);
+ DATA = getc(); // Lecture de la donnée reçue dans le buffer (tampon) de réception
+ output_d(DATA) ; // Envoi de DATA sur les leds du PortD 
  }
 }
 // PROGRAMME PRINCIPAL
@@ -35,6 +34,6 @@ enable_interrupts(INT_RDA); // Activation de l'interruption de réception de donn
  
  while(TRUE)
  {
- 
+   RX_DATA();
   }
 }

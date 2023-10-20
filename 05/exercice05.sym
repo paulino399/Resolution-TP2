@@ -24,9 +24,10 @@
 016     @INTERRUPT_AREA
 017     @INTERRUPT_AREA
 018     @INTERRUPT_AREA
-019     @INTERRUPT_AREA
-01A-01B TEMPO
-01C     DATA
+019-01A TEMPO
+01B     DATA
+01C     RX_DATA.@SCRATCH1
+01D     @delay_ms1.P1
 F83     PSP_DATA
 FB4.6   C1OUT
 FB4.7   C2OUT
@@ -36,32 +37,33 @@ FBC     CCP_2_HIGH
 FBE     CCP_1
 FBE     CCP_1_LOW
 FBF     CCP_1_HIGH
-FE1-FE2 @READ_PACKED_MEMORY.P1
-FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
 FE9-FEA @WRITE_PACKED_MEMORY.P1
-FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
 FE9-FEA @READ_PACKED_MEMORY.P3
-FE9-FEA @WRITE_PROGRAM_MEMORY.P4
-FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
-FF6-FF8 @READ_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
 
 ROM Allocation:
-0000AE  RX_DATA
-0000C6  main
-0000C6  @cinit1
-0000EA  @cinit2
+0000AE  @delay_ms1
+0000D4  RX_DATA
+0000FE  main
+0000FE  @cinit1
+000122  @cinit2
 
 Project Directory:
     C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\05\
 
 Project Files:
-    exercice05.c                                            [10-oct.-23 10:34  CRC=FA9B2B35]
+    exercice05.c                                            [20-oct.-23 09:23  CRC=ECC1CB0C]
     ..\..\..\..\..\..\Simestre II\Informatique\PIC_C_Compiler\PICC\Devices\18f4520.h [22-avr.-23 21:01  CRC=7B5E14DB]
 
-Source signature=F15754EB
+Source signature=E37DF4C2
 Program memory checksum=0000
 Program memory CRC=0000
-Hex file CRC=90A2
+Hex file CRC=EB4A
 
 Units:
     exercice05 (main)

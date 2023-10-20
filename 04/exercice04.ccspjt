@@ -19,7 +19,7 @@ D1=10-10-2023
 D1_L=6
 D1_L1=[40531]Started Editing.
 D1_L2=[40577]Stopped Editing.
-TotalEdit=1
+TotalEdit=21
 TotalDebug=0
 D1_E=1
 D1_D=0
@@ -28,11 +28,15 @@ D1_L4=[41023]Project Opened.
 D1_L5=[41223]Started Editing.
 D1_L6=[41523]Stopped Editing.
 D2=20-10-2023
-D2_L=4
+D2_L=6
 D2_L1=[31565]Project Opened.
 D2_L2=[32065]Started Editing.
 D2_L3=[32377]Stopped Editing.
 D2_L4=[32641]Started Editing.
+D2_L5=[33802]Stopped Editing.
+D2_E=20
+D2_D=0
+D2_L6=[33802]Project Closed.
 
 [Opened Files]
 1=..\01\Exercice_01.c
@@ -45,7 +49,7 @@ t3=1
 t4=1
 5=..\05\exercice05.c
 t5=1
-Count=4
+Count=5
 [Units]
 Count=1
 1=exercice04 (main)

@@ -1,47 +1,48 @@
 
-ROM used:   244/32768 (1%)
-            244/32768 (1%) including unused fragments
+ROM used:   300/32768 (1%)
+            300/32768 (1%) including unused fragments
 
             0.3 Average locations per line
-            24.4 Average locations per statement
+            33.3 Average locations per statement
 
-RAM used:   29/1536 (2%) at main() level
-            29/1536 (2%) worst case
+RAM used:   28/1536 (2%) at main() level
+            30/1536 (2%) worst case
 
-Stack used: 5 worst case (4 in main + 1 for interrupts)
+Stack used: 2 worst case (1 in main + 1 for interrupts)
 Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   40    10 100  exercice05.c
+   41     9 100  exercice05.c
   844     0   0  ..\..\..\..\..\..\Simestre II\Informatique\PIC_C_Compiler\PICC\Devices\18f4520.h
 ----- -----
-  884    10 Total
+  885     9 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
-0     24   5    0     61  2.1  RX_DATA
-0     50  10    0     82  2.0  main
- Inline         0    380  4.7  @cinit1
+0     38   6    1             @delay_ms1
+0     42   7    1     69  1.9  RX_DATA
+0     50   8    0     69  1.9  main
+ Inline         0    186  5.5  @cinit1
 
 Program metrics:
     Functions               3
-    Statements              10
+    Statements              9
     Comments                182
-    Volume (V)              662
-    Difficulty (D)          9.0
-    Effort to implement (E) 5958
-    Time to implement (T)   6 minutes
+    Volume (V)              435
+    Difficulty (D)          9.1
+    Effort to implement (E) 3969
+    Time to implement (T)   4 minutes
     Est Delivered Bugs (B)  0
-    Cyclomatic Complexity   3
-    Maintainability (MI)    99
+    Cyclomatic Complexity   2
+    Maintainability (MI)    103
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
 00004-00006     0  4  
 00008-000AC   166  0  
-000AE-07FFE    74  32520  
+000AE-07FFE   130  32464  
 
 
 
