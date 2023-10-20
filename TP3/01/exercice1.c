@@ -1,4 +1,4 @@
-// Ecriture dans la mÈmoire EEPROM 24LC64
+// Ecriture dans la m√©moire EEPROM 24LC64
 // sorties : PortC : RC4... = SCL et RC3... = SDA
 #include <18f4520.h>
 #use delay(crystal=20MHz)
@@ -9,15 +9,16 @@ void main()
 {
 output_float(PIN_C3); // mise en sortie collecteur ouvert de la broche RC...
 output_float(PIN_C4); // mise en sortie collecteur ouvert de la broche RC...
-AD_MEM = 0x01F0; // adresse mÈmoire o˘ l'on veut stocker la donnÈe
-DATA0 = 75; // donnÈe ‡ stocker
-// Ecriture en mÈmoire ‡ l'adresse AD_MEM de la donnÈe DATA0
+AD_MEM = 0x01F0; // adresse m√©moire o√π l'on veut stocker la donn√©e
+DATA0 = 75; // donn√©e √† stocker
+// Ecriture en m√©moire √† l'adresse AD_MEM de la donn√©e DATA0
 i2c_start();
-i2c_write(0b10100000); // CONTROL BYTE = adresse 0b1010000 + 0 pour l'Ècriture (=0xA0=160)
+i2c_write(0b10100000); // CONTROL BYTE = adresse 0b1010000 + 0 pour l'√©criture (=0xA0=160)
 i2c_write(AD_MEM>>8); // ADRESS HIGH BYTE (ici 0x01)
 i2c_write(AD_MEM); // ADRESS LOW BYTE (ici 0xF0)
-i2c_write(DATA0); // Ècriture de la donnÈe ‡ l'adresse dÈfinie auparavant
+i2c_write(DATA0); // √©criture de la donn√©e √† l'adresse d√©finie auparavant
 i2c_stop();
+  //le code pour le cahier de charge 1 on doit le modifier de fa√ßon √† l'adaputeur au codigo r√©el
 while(true)
 {
 //
