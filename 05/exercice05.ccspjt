@@ -23,10 +23,11 @@ D1_L3=[39188]Stopped Editing.
 D1_L4=[40343]Started Editing.
 D1_L5=[40415]Project Closed.
 D2=20-10-2023
-D2_L=3
+D2_L=4
 D2_L1=[33802]Project Opened.
 D2_L2=[33815]Started Editing.
 D2_L3=[34135]Stopped Editing.
+D2_L4=[34519]Project Closed.
 
 [Opened Files]
 1=..\01\Exercice_01.c

@@ -36,3 +36,10 @@ Count=9
 [Units]
 Count=1
 1=exercice1 (main)
+
+[ProjectLog]
+Days=1
+D1=20-10-2023
+D1_L=2
+D1_L1=[34532]Project Opened.
+D1_L2=[38742]Started Editing.
