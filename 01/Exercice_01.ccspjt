@@ -14,7 +14,7 @@ Type=4
 buildcount=6
 
 [ProjectLog]
-Days=4
+Days=5
 D1=06-10-2023
 D1_L=8
 D1_L1=[62425]Started Editing.
@@ -40,6 +40,10 @@ D4=19-10-2023
 D4_L=2
 D4_L1=[43453]Project Opened.
 D4_L2=[43454]Project Closed.
+D5=20-10-2023
+D5_L=2
+D5_L1=[30021]Project Opened.
+D5_L2=[30022]Project Closed.
 
 [Opened Files]
 1=Exercice_01.c
