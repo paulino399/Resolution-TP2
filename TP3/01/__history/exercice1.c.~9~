@@ -10,7 +10,7 @@ void main()
 output_float(PIN_C3); // mise en sortie collecteur ouvert de la broche RC...
 output_float(PIN_C4); // mise en sortie collecteur ouvert de la broche RC...
 AD_MEM =0x40;// 0x01F0; // adresse mémoire où l'on veut stocker la donnée
-DATA0 = 90; // donnée à stocker
+DATA0 = 75; // donnée à stocker
 // Ecriture en mémoire à l'adresse AD_MEM de la donnée DATA0
 
   //le code pour le cahier de charge 1 on doit le modifier de fa�on � l'adaputeur au codigo r�el

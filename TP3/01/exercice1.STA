@@ -1,45 +1,46 @@
 
-ROM used:   246/32768 (1%)
-            246/32768 (1%) including unused fragments
+ROM used:   272/32768 (1%)
+            272/32768 (1%) including unused fragments
 
             0.3 Average locations per line
-            20.5 Average locations per statement
+            24.7 Average locations per statement
 
-RAM used:   10/1536 (1%) at main() level
-            11/1536 (1%) worst case
+RAM used:   8/1536 (1%) at main() level
+            9/1536 (1%) worst case
 
-Stack used: 4 worst case (4 in main + 0 for interrupts)
+Stack used: 1 worst case (1 in main + 0 for interrupts)
 Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   26    12 100  exercice1.c
+   26    11 100  exercice1.c
   844     0   0  ..\..\..\..\..\..\..\Simestre II\Informatique\PIC_C_Compiler\PICC\Devices\18f4520.h
 ----- -----
-  870    12 Total
+  870    11 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
-0    108  22    1    326  2.8  @I2C_WRITE_1
-0    134  27    2    221  2.7  main
- Inline         0    235  3.8  @cinit1
+0     40   7    1             @delay_ms1
+0    108  20    1     69  1.9  @I2C_WRITE_1
+0    120  22    0    183  2.2  main
+ Inline         0     69  1.9  @cinit1
 
 Program metrics:
     Functions               3
-    Statements              12
-    Comments                165
-    Volume (V)              1029
-    Difficulty (D)          9.3
-    Effort to implement (E) 9595
-    Time to implement (T)   9 minutes
+    Statements              11
+    Comments                163
+    Volume (V)              435
+    Difficulty (D)          6.1
+    Effort to implement (E) 2663
+    Time to implement (T)   2 minutes
     Est Delivered Bugs (B)  0
     Cyclomatic Complexity   1
-    Maintainability (MI)    74
+    Maintainability (MI)    78
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
-00004-07FFE   242  32522  
+00004-07FFE   268  32496  
 
 
 

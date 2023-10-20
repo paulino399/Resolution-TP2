@@ -1,9 +1,9 @@
 D G "__PCH__" 0 27 ""5.059""
 D G "__DEVICE__" 0 27 "4520"
-D G "__DATE__" 0 27 ""19-oct.-23""
-D G "__TIME__" 0 27 ""22:23:56""
+D G "__DATE__" 0 27 ""20-oct.-23""
+D G "__TIME__" 0 27 ""12:00:29""
 D G "_UNICODE" 0 27 ""?""
-D G "__EVAL" 0 27 ""?"" "Ecriture dans la mémoire EEPROM 24LC64"
+D G "__EVAL" 0 27 ""?"" "Ecriture dans la mÃ©moire EEPROM 24LC64"
 c L "set_tris_a" 1 1 6 "FUNCTION"
 f N "set_tris_a" 1 43 ""
 v L "value" 1 43 "int8" `54 
@@ -1201,9 +1201,7 @@ F G "main" 0 9 "void()" `633
 C L "main" 0 10 1 "FUNCTION"
 C L "main" 0 10 1 "FUNCTION"
 C L "main" 0 10 1 "FUNCTION"
-C L "main" 0 10 2 "FUNCTION"
-C L "main" 0 10 1 "FUNCTION"
-C L "main" 0 10 1 "FUNCTION"
+C L "main" 0 10 3 "FUNCTION"
 C L "main" 0 10 1 "FUNCTION"
 C L "main" 0 10 1 "FUNCTION"
 F B "reset_cpu" 0 0

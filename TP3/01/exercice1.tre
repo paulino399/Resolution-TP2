@@ -1,7 +1,6 @@
 青exercice1
-   青main  0/134  Ram=2
+   青main  0/120  Ram=0
       団@cinit1  (Inline)  Ram=0
       団@I2C_WRITE_1  0/108  Ram=1
       団@I2C_WRITE_1  0/108  Ram=1
-      団@I2C_WRITE_1  0/108  Ram=1
-      青@I2C_WRITE_1  0/108  Ram=1
+      青@delay_ms1  0/40  Ram=1
