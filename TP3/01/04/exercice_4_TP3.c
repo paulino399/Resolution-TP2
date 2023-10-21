@@ -1,26 +1,38 @@
+///////////////////////////////////////////////////////////////////////////////
+//On désire afficher sur les leds d'une carte EB004 (LED board) connectée à un 
+//port du MCU, l'état desinterrupteurs de la carte avec 8 INTER connectée au 
+//circuit PCF8574
+///////////////////////////////////////////////////////////////////////////////
+
 #include <18f4520.h>
 #use delay(crystal=20MHz)
 #use i2c(master, sda=PIN_C3, scl=PIN_C4)
 
-unsigned int8 DATA0;
+unsigned int8 data;
 
-// Fonction pour envoyer un octet au PCF8574
-void output_portF(unsigned int8 data) {
+// Fonction pour lire l'état des interrupteurs du PCF8574
+unsigned int8 read_switches() {
     i2c_start();
-    i2c_write(0b01000000); // Adresse du PCF8574 en mode écriture
-    i2c_write(data);       // Envoi de l'octet de données
+    i2c_write(0b01000000); // Envoyer l'adresse du PCF8574 en mode écriture
+    i2c_start();
+    i2c_write(0b01000000 | 1); // Envoyer l'adresse du PCF8574 en mode lecture
+   data = i2c_read(0); // Lire les données et envoyer un NACK (0) à la fin
     i2c_stop();
+    return data;
 }
 
 void main() {
     output_float(PIN_C3);
     output_float(PIN_C4);
-    DATA0 = 90;
 
     while (true) {
-        // Appel de la fonction pour envoyer l'octet vers le PCF8574
-        output_portF(0b10100101); // Configuration pour allumer les LEDs 1, 3, 4 et 6
-        delay_ms(10);
+        // Lire l'état des interrupteurs depuis le PCF8574
+        data = read_switches();
+
+        // Afficher l'état des interrupteurs sur les LED
+        output_d(data); // Affichez l'état des interrupteurs sur les LED de la carte EB004
+
+        delay_ms(10); // Attendre un certain temps avant de lire à nouveau les interrupteurs
     }
 }
 
