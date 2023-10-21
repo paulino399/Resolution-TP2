@@ -26,7 +26,7 @@ void main() {
         // Afficher l'état des interrupteurs sur les LED
         output_b(data); // Affichez l'état des interrupteurs sur les LED de la carte EB004
 
-        delay_ms(10); // Attendre un certain temps avant de lire à nouveau les interrupteurs
+        delay_ms(100); // Attendre un certain temps avant de lire à nouveau les interrupteurs
     }
 }
 

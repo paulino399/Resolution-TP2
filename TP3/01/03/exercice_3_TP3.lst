@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 08:32
+CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 08:33
 
                Filename:   C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\TP3\01\03\exercice_3_TP3.lst
 
@@ -258,8 +258,8 @@ CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 08:32
 01A2:  CLRF   F93
 01A4:  MOVFF  04,F8A
 ....................  
-....................         delay_ms(100); // Attendre un certain temps avant de lire à nouveau les interrupteurs 
-01A8:  MOVLW  64
+....................         delay_ms(10); // Attendre un certain temps avant de lire à nouveau les interrupteurs 
+01A8:  MOVLW  0A
 01AA:  MOVWF  05
 01AC:  BRA    0160
 01AE:  BRA    019C
