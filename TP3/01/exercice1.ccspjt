@@ -37,7 +37,7 @@ Count=2
 [ProjectLog]
 Days=1
 D1=20-10-2023
-D1_L=16
+D1_L=17
 D1_L1=[34532]Project Opened.
 D1_L2=[38742]Started Editing.
 D1_L3=[39371]Stopped Editing.
@@ -54,6 +54,7 @@ D1_L13=[42583]Stopped Editing.
 D1_L14=[43227]Started Editing.
 D1_L15=[43528]Stopped Editing.
 D1_L16=[43548]Started Editing.
+D1_L17=[49668]Stopped Editing.
 [Units]
 Count=1
 1=exercice1 (main)
