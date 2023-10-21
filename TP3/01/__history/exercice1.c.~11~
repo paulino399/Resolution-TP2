@@ -19,8 +19,8 @@ while(true)
 i2c_start();
 i2c_write(0b01000000); //i2c_write(0b10100000);  // CONTROL BYTE = adresse 0b1010000 + 0 pour l'Ã©criture (=0xA0=160)
 i2c_write(DATA0); // écriture de la donnée à  l'adresse définie auparavant
+output_portf(DATA);
 i2c_stop();
-output_portF(DATA0);
 delay_ms(10);
 }
 }

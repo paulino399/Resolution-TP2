@@ -14,11 +14,11 @@ Type=4
 buildcount=10
 
 [Opened Files]
-1=exercice1.c
+1=01\exercice01_TP3.c
 t1=1
-2=01\exercice01_TP3.c
+2=exercice1.c
 t2=1
-3=..\..\03\exercice03.c
+3=02\exercice_2_TP3.c
 t3=1
 4=..\..\04\exercice04.c
 t4=1
@@ -32,7 +32,7 @@ t7=24
 t8=12
 9=exercice1.c
 t9=12
-Count=2
+Count=3
 
 [ProjectLog]
 Days=1
