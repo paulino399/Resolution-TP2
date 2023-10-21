@@ -1,0 +1,4 @@
+>>> Warning 202 "exercice01_TP3.c" Line 6(21,26): Variable never used:   DATA1
+      Memory usage:   ROM=1%      RAM=1% - 1%
+      0 Errors,  1 Warnings.
+Build Successful.

@@ -1,0 +1,17 @@
+[PROJECT]
+Target=exercice01_TP3.hex
+Processor_Text=PIC18F4520
+CCSVersion=5.059
+Compiler=PCH
+[Target Data]
+FileList=exercice01_TP3.c
+[exercice01_TP3.c]
+Type=4
+[mru-list]
+1=exercice01_TP3.c
+[Units]
+Count=1
+1=exercice01_TP3 (main)
+
+[defines]
+buildcount=1
