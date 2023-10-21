@@ -11,7 +11,7 @@ Type=4
 1=exercice01_TP3.c
 
 [defines]
-buildcount=4
+buildcount=6
 
 [ProjectLog]
 Days=1
@@ -30,7 +30,7 @@ D1_L4=[29836]Started Editing.
 1=exercice01_TP3.c
 t1=1
 2=..\exercice1.c
-t2=5
+t2=1
 3=..\02\exercice_2_TP3.c
 t3=1
 Count=3

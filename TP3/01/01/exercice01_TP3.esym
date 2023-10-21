@@ -1,7 +1,7 @@
 D G "__PCH__" 0 25 ""5.059""
 D G "__DEVICE__" 0 25 "4520"
 D G "__DATE__" 0 25 ""21-oct.-23""
-D G "__TIME__" 0 25 ""08:17:23""
+D G "__TIME__" 0 25 ""08:19:49""
 D G "_UNICODE" 0 25 ""?""
 D G "__EVAL" 0 25 ""?"" "Ecriture dans la mémoire EEPROM 24LC64"
 c L "set_tris_a" 1 1 6 "FUNCTION"
