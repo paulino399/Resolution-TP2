@@ -1,18 +1,16 @@
-CCS PCH C Compiler, Version 5.059, 5967               20-oct.-23 12:00
+CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 08:12
 
                Filename:   C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolu��o\Resolution TP2\TP3\01\exercice1.lst
 
-               ROM used:   272 bytes (1%)
-                           Largest free fragment is 32496
-               RAM used:   8 (1%) at main() level
+               ROM used:   282 bytes (1%)
+                           Largest free fragment is 32486
+               RAM used:   7 (0%) at main() level
                            9 (1%) worst case
-               Stack used: 1 locations
+               Stack used: 0 locations
                Stack size: 31
 
 *
-0000:  GOTO   0098
-.................... // Ecriture dans la mémoire EEPROM 24LC64 
-.................... // sorties : PortC : RC4... = SCL et RC3... = SDA 
+0000:  GOTO   00EC
 .................... #include <18f4520.h> 
 .................... //////////// Standard Header file for the PIC18F4520 device //////////////// 
 .................... /////////////////////////////////////////////////////////////////////////// 
@@ -30,26 +28,26 @@ CCS PCH C Compiler, Version 5.059, 5967               20-oct.-23 12:00
 ....................  
 .................... #use delay(crystal=20MHz) 
 *
-0070:  CLRF   FEA
-0072:  MOVLW  08
-0074:  MOVWF  FE9
-0076:  MOVF   FEF,W
-0078:  BZ    0094
-007A:  MOVLW  06
-007C:  MOVWF  01
-007E:  CLRF   00
-0080:  DECFSZ 00,F
-0082:  BRA    0080
-0084:  DECFSZ 01,F
-0086:  BRA    007E
-0088:  MOVLW  7B
-008A:  MOVWF  00
-008C:  DECFSZ 00,F
-008E:  BRA    008C
-0090:  DECFSZ FEF,F
-0092:  BRA    007A
-0094:  GOTO   010C (RETURN)
-.................... #use i2c(master, sda=PIN_C3, scl=PIN_C4) // configuration du bus I2C en MAITRE avec utilisation du module I2C interne 
+00C4:  CLRF   FEA
+00C6:  MOVLW  07
+00C8:  MOVWF  FE9
+00CA:  MOVF   FEF,W
+00CC:  BZ    00E8
+00CE:  MOVLW  06
+00D0:  MOVWF  01
+00D2:  CLRF   00
+00D4:  DECFSZ 00,F
+00D6:  BRA    00D4
+00D8:  DECFSZ 01,F
+00DA:  BRA    00D2
+00DC:  MOVLW  7B
+00DE:  MOVWF  00
+00E0:  DECFSZ 00,F
+00E2:  BRA    00E0
+00E4:  DECFSZ FEF,F
+00E6:  BRA    00CE
+00E8:  GOTO   0116 (RETURN)
+.................... #use i2c(master, sda=PIN_C3, scl=PIN_C4) 
 *
 0004:  MOVLW  08
 0006:  MOVWF  01
@@ -105,86 +103,95 @@ CCS PCH C Compiler, Version 5.059, 5967               20-oct.-23 12:00
 006A:  BCF    F8B.3
 006C:  BCF    F94.3
 006E:  RETURN 0
-.................... unsigned int8 DATA0,DATA1; 
-.................... unsigned int16 AD_MEM; 
-.................... void main() 
-*
-0098:  CLRF   FF8
-009A:  BCF    FD0.7
-009C:  MOVF   FC1,W
-009E:  ANDLW  C0
-00A0:  IORLW  0F
-00A2:  MOVWF  FC1
-00A4:  MOVLW  07
-00A6:  MOVWF  FB4
-.................... { 
-.................... output_float(PIN_C3); // mise en sortie collecteur ouvert de la broche RC... 
-00A8:  BSF    F94.3
-.................... output_float(PIN_C4); // mise en sortie collecteur ouvert de la broche RC... 
-00AA:  BSF    F94.4
-.................... AD_MEM =0x40;// 0x01F0; // adresse mémoire où l'on veut stocker la donnée 
-00AC:  CLRF   07
-00AE:  MOVLW  40
-00B0:  MOVWF  06
-.................... DATA0 = 90; // donnée à stocker 
-00B2:  MOVLW  5A
-00B4:  MOVWF  04
-.................... // Ecriture en mémoire à l'adresse AD_MEM de la donnée DATA0 
 ....................  
-....................   //le code pour le cahier de charge 1 on doit le modifier de fa�on � l'adaputeur au codigo r�el 
-.................... while(true) 
-.................... { 
-.................... i2c_start(); 
+.................... unsigned int8 DATA0; 
+.................... unsigned int16 AD_MEM; 
+....................  
+.................... // Fonction pour envoyer un octet au PCF8574 
+.................... void output_portF(unsigned int8 data) { 
+....................     i2c_start(); 
+0070:  BSF    F94.3
+0072:  MOVLW  05
+0074:  MOVWF  00
+0076:  DECFSZ 00,F
+0078:  BRA    0076
+007A:  BSF    F94.4
+007C:  MOVLW  06
+007E:  MOVWF  00
+0080:  DECFSZ 00,F
+0082:  BRA    0080
+0084:  BCF    F8B.3
+0086:  BCF    F94.3
+0088:  MOVLW  05
+008A:  MOVWF  00
+008C:  DECFSZ 00,F
+008E:  BRA    008C
+0090:  BCF    F8B.4
+0092:  BCF    F94.4
+....................     i2c_write(0b01000000); // Adresse du PCF8574 en mode �criture 
+0094:  MOVLW  40
+0096:  MOVWF  08
+0098:  RCALL  0004
+....................     i2c_write(data);       // Envoi de l'octet de donn�es 
+009A:  MOVFF  07,08
+009E:  RCALL  0004
+....................     i2c_stop(); 
+00A0:  BCF    F94.3
+00A2:  NOP   
+00A4:  BSF    F94.4
+00A6:  BTFSS  F82.4
+00A8:  BRA    00A6
+00AA:  MOVLW  05
+00AC:  MOVWF  00
+00AE:  DECFSZ 00,F
+00B0:  BRA    00AE
+00B2:  BRA    00B4
+00B4:  NOP   
 00B6:  BSF    F94.3
 00B8:  MOVLW  05
 00BA:  MOVWF  00
 00BC:  DECFSZ 00,F
 00BE:  BRA    00BC
-00C0:  BSF    F94.4
-00C2:  MOVLW  06
-00C4:  MOVWF  00
-00C6:  DECFSZ 00,F
-00C8:  BRA    00C6
-00CA:  BCF    F8B.3
-00CC:  BCF    F94.3
-00CE:  MOVLW  05
-00D0:  MOVWF  00
-00D2:  DECFSZ 00,F
-00D4:  BRA    00D2
-00D6:  BCF    F8B.4
-00D8:  BCF    F94.4
-.................... i2c_write(0b01000000); //i2c_write(0b10100000);  // CONTROL BYTE = adresse 0b1010000 + 0 pour l'écriture (=0xA0=160) 
-00DA:  MOVLW  40
-00DC:  MOVWF  08
-00DE:  RCALL  0004
-.................... i2c_write(DATA0); // écriture de la donnée à l'adresse définie auparavant 
-00E0:  MOVFF  04,08
-00E4:  RCALL  0004
-.................... i2c_stop(); 
-00E6:  BCF    F94.3
-00E8:  NOP   
-00EA:  BSF    F94.4
-00EC:  BTFSS  F82.4
-00EE:  BRA    00EC
-00F0:  MOVLW  05
-00F2:  MOVWF  00
-00F4:  DECFSZ 00,F
-00F6:  BRA    00F4
-00F8:  BRA    00FA
-00FA:  NOP   
+00C0:  GOTO   0110 (RETURN)
+.................... } 
+....................  
+.................... void main() { 
+*
+00EC:  CLRF   FF8
+00EE:  BCF    FD0.7
+00F0:  MOVF   FC1,W
+00F2:  ANDLW  C0
+00F4:  IORLW  0F
+00F6:  MOVWF  FC1
+00F8:  MOVLW  07
+00FA:  MOVWF  FB4
+....................     output_float(PIN_C3); 
 00FC:  BSF    F94.3
-00FE:  MOVLW  05
-0100:  MOVWF  00
-0102:  DECFSZ 00,F
-0104:  BRA    0102
-.................... delay_ms(10); 
-0106:  MOVLW  0A
-0108:  MOVWF  08
-010A:  BRA    0070
-010C:  BRA    00B6
+....................     output_float(PIN_C4); 
+00FE:  BSF    F94.4
+....................     AD_MEM = 0x40; 
+0100:  CLRF   06
+0102:  MOVLW  40
+0104:  MOVWF  05
+....................     DATA0 = 90; 
+0106:  MOVLW  5A
+0108:  MOVWF  04
+....................  
+....................     while (true) { 
+....................         // Appel de la fonction pour envoyer l'octet vers le PCF8574 
+....................         output_portF(0b10100101); // Configuration pour allumer les LEDs 1, 3, 4 et 6 
+010A:  MOVLW  A5
+010C:  MOVWF  07
+010E:  BRA    0070
+....................         delay_ms(10); 
+0110:  MOVLW  0A
+0112:  MOVWF  07
+0114:  BRA    00C4
+0116:  BRA    010A
+....................     } 
 .................... } 
-.................... } 
-010E:  SLEEP 
+....................  
+0118:  SLEEP 
 
 Configuration Fuses:
    Word  1: C200   HS FCMEN IESO

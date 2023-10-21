@@ -1,26 +1,28 @@
-// Ecriture dans la m√©moire EEPROM 24LC64
-// sorties : PortC : RC4... = SCL et RC3... = SDA
 #include <18f4520.h>
 #use delay(crystal=20MHz)
-#use i2c(master, sda=PIN_C3, scl=PIN_C4) // configuration du bus I2C en MAITRE avec utilisation du module I2C interne
-unsigned int8 DATA0,DATA1;
-unsigned int16 AD_MEM;
-void main()
-{
-output_float(PIN_C3); // mise en sortie collecteur ouvert de la broche RC...
-output_float(PIN_C4); // mise en sortie collecteur ouvert de la broche RC...
-AD_MEM =0x40;// 0x01F0; // adresse m√©moire o√π l'on veut stocker la donn√©e
-DATA0 = 90; // donn√©e √† stocker
-// Ecriture en m√©moire √† l'adresse AD_MEM de la donn√©e DATA0
+#use i2c(master, sda=PIN_C3, scl=PIN_C4)
 
-  //le code pour le cahier de charge 1 on doit le modifier de faÁon ‡ l'adaputeur au codigo rÈel
-while(true)
-{
-i2c_start();
-i2c_write(0b01000000); //i2c_write(0b10100000);  // CONTROL BYTE = adresse 0b1010000 + 0 pour l'√©criture (=0xA0=160)
-i2c_write(DATA0); // Ècriture de la donnÈe ‡† l'adresse dÈfinie auparavant
-i2c_stop();
-output_portF(DATA0);
-delay_ms(10);
+unsigned int8 DATA0;
+unsigned int16 AD_MEM;
+
+// Fonction pour envoyer un octet au PCF8574
+void output_portF(unsigned int8 data) {
+    i2c_start();
+    i2c_write(0b01000000); // Adresse du PCF8574 en mode Ècriture
+    i2c_write(data);       // Envoi de l'octet de donnÈes
+    i2c_stop();
 }
+
+void main() {
+    output_float(PIN_C3);
+    output_float(PIN_C4);
+    AD_MEM = 0x40;
+    DATA0 = 90;
+
+    while (true) {
+        // Appel de la fonction pour envoyer l'octet vers le PCF8574
+        output_portF(0b10100101); // Configuration pour allumer les LEDs 1, 3, 4 et 6
+        delay_ms(10);
+    }
 }
+
