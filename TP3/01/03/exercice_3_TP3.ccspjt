@@ -16,8 +16,9 @@ buildcount=4
 [ProjectLog]
 Days=1
 D1=21-10-2023
-D1_L=1
+D1_L=2
 D1_L1=[30662]Started Editing.
+D1_L2=[31290]Stopped Editing.
 
 [Opened Files]
 1=..\01\exercice01_TP3.c
