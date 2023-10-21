@@ -8,4 +8,3 @@
 #include <18f4520.h>
 #use delay(crystal=20MHz)
 #use i2c(master, sda=PIN_C3, scl=PIN_C4)
-unsigned int8 DATA0;
