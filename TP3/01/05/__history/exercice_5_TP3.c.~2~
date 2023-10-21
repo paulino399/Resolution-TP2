@@ -5,6 +5,4 @@
 //« input_portF(...) » qui permet de recevoir un octet sur le portcréé par le
 //circuit PCF8574.
 ///////////////////////////////////////////////////////////////////////////////
-#include <18f4520.h>
-#use delay(crystal=20MHz)
-#use i2c(master, sda=PIN_C3, scl=PIN_C4)
+
