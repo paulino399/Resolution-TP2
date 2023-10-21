@@ -1,3 +1,1 @@
-      Memory usage:   ROM=1%      RAM=0% - 1%
-      0 Errors,  0 Warnings.
-Build Successful.
+*** Error 128 "exercice_3_TP3.c" Line 35(0,1): A #DEVICE required before this line

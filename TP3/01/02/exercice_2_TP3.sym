@@ -37,13 +37,13 @@ Project Directory:
     C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\TP3\01\02\
 
 Project Files:
-    exercice_2_TP3.c                                        [21-oct.-23 08:21  CRC=F96D5BC1]
+    exercice_2_TP3.c                                        [21-oct.-23 09:07  CRC=F511E0DE]
     ..\..\..\..\..\..\..\..\Simestre II\Informatique\PIC_C_Compiler\PICC\Devices\18f4520.h [22-avr.-23 21:01  CRC=7B5E14DB]
 
-Source signature=F0298577
+Source signature=EBCE0A94
 Program memory checksum=0000
 Program memory CRC=0000
-Hex file CRC=3B80
+Hex file CRC=C6CE
 
 Units:
     exercice_2_TP3 (main)
