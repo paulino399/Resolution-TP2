@@ -11,14 +11,15 @@ Type=4
 1=exercice_3_TP3.c
 
 [defines]
-buildcount=4
+buildcount=5
 
 [ProjectLog]
 Days=1
 D1=21-10-2023
-D1_L=2
+D1_L=3
 D1_L1=[30662]Started Editing.
 D1_L2=[31290]Stopped Editing.
+D1_L3=[31483]Started Editing.
 
 [Opened Files]
 1=..\01\exercice01_TP3.c

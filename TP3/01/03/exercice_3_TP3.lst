@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 08:33
+CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 08:46
 
                Filename:   C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\TP3\01\03\exercice_3_TP3.lst
 
@@ -11,6 +11,12 @@ CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 08:33
 
 *
 0000:  GOTO   0188
+.................... /////////////////////////////////////////////////////////////////////////////// 
+.................... //On désire afficher sur les leds d'une carte EB004 (LED board) connectée à un  
+.................... //port du MCU, l'état desinterrupteurs de la carte avec 8 INTER connectée au  
+.................... //circuit PCF8574 
+.................... /////////////////////////////////////////////////////////////////////////////// 
+....................  
 .................... #include <18f4520.h> 
 .................... //////////// Standard Header file for the PIC18F4520 device //////////////// 
 .................... /////////////////////////////////////////////////////////////////////////// 
@@ -249,7 +255,7 @@ CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 08:33
 ....................  
 ....................     while (true) { 
 ....................         // Lire l'état des interrupteurs depuis le PCF8574 
-....................        data = read_switches(); 
+....................         data = read_switches(); 
 019C:  BRA    00D8
 019E:  MOVFF  01,04
 ....................  

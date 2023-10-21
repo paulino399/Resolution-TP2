@@ -1,9 +1,3 @@
-///////////////////////////////////////////////////////////////////////////////
-//On désire afficher sur les leds d'une carte EB004 (LED board) connectée à un 
-//port du MCU, l'état desinterrupteurs de la carte avec 8 INTER connectée au 
-//circuit PCF8574
-///////////////////////////////////////////////////////////////////////////////
-
 #include <18f4520.h>
 #use delay(crystal=20MHz)
 #use i2c(master, sda=PIN_C3, scl=PIN_C4)
@@ -27,7 +21,7 @@ void main() {
 
     while (true) {
         // Lire l'état des interrupteurs depuis le PCF8574
-        data = read_switches();
+       data = read_switches();
 
         // Afficher l'état des interrupteurs sur les LED
         output_b(data); // Affichez l'état des interrupteurs sur les LED de la carte EB004
