@@ -1,0 +1,73 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     data
+005     @I2C_READ_1.P1
+005     @I2C_WRITE_1.P2
+005     @delay_ms1.P3
+006     @I2C_READ_1.@SCRATCH1
+007     @I2C_READ_1.@SCRATCH2
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @I2C_WRITE_1
+000070  @I2C_READ_1
+0000D8  read_switches
+000160  @delay_ms1
+000188  main
+000188  @cinit1
+000198  @cinit2
+
+Project Directory:
+    C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\TP3\01\03\
+
+Project Files:
+    exercice_3_TP3.c                                        [21-oct.-23 08:32  CRC=2AECF6F9]
+    ..\..\..\..\..\..\..\..\Simestre II\Informatique\PIC_C_Compiler\PICC\Devices\18f4520.h [22-avr.-23 21:01  CRC=7B5E14DB]
+
+Source signature=21A920AF
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=E2B2
+
+Units:
+    exercice_3_TP3 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4520
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   exercice_3_TP3.xsym
+    Errors:      exercice_3_TP3.err
+    Ext Symbols: exercice_3_TP3.esym
+    INHX32:      exercice_3_TP3.hex
+    Symbols:     exercice_3_TP3.sym
+    List:        exercice_3_TP3.lst
+    Debug/COFF:  exercice_3_TP3.cof
+    Project:     exercice_3_TP3.ccspjt
+    Call Tree:   exercice_3_TP3.tre
+    Statistics:  exercice_3_TP3.STA

@@ -1,10 +1,3 @@
-///////////////////////////////////////////////////////////////////////////////
-//On désire toujours allumer les leds 1, 3, 4 et 6 sur la carte 8 LEDS par 
-//l'intermédiaire d'un bus I2C et le composantPCF8574.MAIS on vous demande de 
-//créer une fonction « output_portF(...) » qui permet d'envoyer un octet sur le 
-//port de 8 bits créé par l'intermédiaire du circuit PCF8574.
-///////////////////////////////////////////////////////////////////////////////
-
 #include <18f4520.h>
 #use delay(crystal=20MHz)
 #use i2c(master, sda=PIN_C3, scl=PIN_C4)

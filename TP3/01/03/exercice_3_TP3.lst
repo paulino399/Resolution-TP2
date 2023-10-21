@@ -1,0 +1,278 @@
+CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 08:32
+
+               Filename:   C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\TP3\01\03\exercice_3_TP3.lst
+
+               ROM used:   434 bytes (1%)
+                           Largest free fragment is 32334
+               RAM used:   5 (0%) at main() level
+                           8 (1%) worst case
+               Stack used: 0 locations
+               Stack size: 31
+
+*
+0000:  GOTO   0188
+.................... #include <18f4520.h> 
+.................... //////////// Standard Header file for the PIC18F4520 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F4520 
+....................  
+.................... #list 
+....................  
+.................... #use delay(crystal=20MHz) 
+*
+0160:  CLRF   FEA
+0162:  MOVLW  05
+0164:  MOVWF  FE9
+0166:  MOVF   FEF,W
+0168:  BZ    0184
+016A:  MOVLW  06
+016C:  MOVWF  01
+016E:  CLRF   00
+0170:  DECFSZ 00,F
+0172:  BRA    0170
+0174:  DECFSZ 01,F
+0176:  BRA    016E
+0178:  MOVLW  7B
+017A:  MOVWF  00
+017C:  DECFSZ 00,F
+017E:  BRA    017C
+0180:  DECFSZ FEF,F
+0182:  BRA    016A
+0184:  GOTO   01AE (RETURN)
+.................... #use i2c(master, sda=PIN_C3, scl=PIN_C4) 
+*
+0004:  MOVLW  08
+0006:  MOVWF  01
+0008:  MOVLW  05
+000A:  MOVWF  00
+000C:  DECFSZ 00,F
+000E:  BRA    000C
+0010:  BCF    F8B.4
+0012:  BCF    F94.4
+0014:  MOVLW  06
+0016:  MOVWF  00
+0018:  DECFSZ 00,F
+001A:  BRA    0018
+001C:  RLCF   05,F
+001E:  BCF    F8B.3
+0020:  BTFSC  FD8.0
+0022:  BSF    F94.3
+0024:  BTFSS  FD8.0
+0026:  BCF    F94.3
+0028:  BSF    F94.4
+002A:  BTFSS  F82.4
+002C:  BRA    002A
+002E:  DECFSZ 01,F
+0030:  BRA    0008
+0032:  MOVLW  05
+0034:  MOVWF  00
+0036:  DECFSZ 00,F
+0038:  BRA    0036
+003A:  BCF    F8B.4
+003C:  BCF    F94.4
+003E:  NOP   
+0040:  BSF    F94.3
+0042:  MOVLW  06
+0044:  MOVWF  00
+0046:  DECFSZ 00,F
+0048:  BRA    0046
+004A:  MOVLW  06
+004C:  MOVWF  00
+004E:  DECFSZ 00,F
+0050:  BRA    004E
+0052:  BSF    F94.4
+0054:  BTFSS  F82.4
+0056:  BRA    0054
+0058:  CLRF   01
+005A:  MOVLW  06
+005C:  MOVWF  00
+005E:  DECFSZ 00,F
+0060:  BRA    005E
+0062:  BTFSC  F82.3
+0064:  BSF    01.0
+0066:  BCF    F8B.4
+0068:  BCF    F94.4
+006A:  BCF    F8B.3
+006C:  BCF    F94.3
+006E:  RETURN 0
+0070:  MOVLW  08
+0072:  MOVWF  06
+0074:  MOVFF  00,07
+0078:  BSF    F94.3
+007A:  MOVLW  06
+007C:  MOVWF  00
+007E:  DECFSZ 00,F
+0080:  BRA    007E
+0082:  BSF    F94.4
+0084:  BTFSS  F82.4
+0086:  BRA    0084
+0088:  BTFSC  F82.3
+008A:  BSF    FD8.0
+008C:  BTFSS  F82.3
+008E:  BCF    FD8.0
+0090:  RLCF   01,F
+0092:  MOVLW  05
+0094:  MOVWF  00
+0096:  DECFSZ 00,F
+0098:  BRA    0096
+009A:  BCF    F94.4
+009C:  BCF    F8B.4
+009E:  DECFSZ 06,F
+00A0:  BRA    0078
+00A2:  BSF    F94.3
+00A4:  MOVLW  06
+00A6:  MOVWF  00
+00A8:  DECFSZ 00,F
+00AA:  BRA    00A8
+00AC:  BCF    F8B.3
+00AE:  MOVF   07,W
+00B0:  BTFSS  FD8.2
+00B2:  BCF    F94.3
+00B4:  NOP   
+00B6:  BSF    F94.4
+00B8:  BTFSS  F82.4
+00BA:  BRA    00B8
+00BC:  MOVLW  05
+00BE:  MOVWF  00
+00C0:  DECFSZ 00,F
+00C2:  BRA    00C0
+00C4:  BCF    F8B.4
+00C6:  BCF    F94.4
+00C8:  MOVLW  06
+00CA:  MOVWF  00
+00CC:  DECFSZ 00,F
+00CE:  BRA    00CC
+00D0:  BCF    F8B.3
+00D2:  BCF    F94.3
+00D4:  GOTO   0134 (RETURN)
+....................  
+.................... unsigned int8 data; 
+....................  
+.................... // Fonction pour lire l'état des interrupteurs du PCF8574 
+.................... unsigned int8 read_switches() { 
+....................     i2c_start(); 
+00D8:  BSF    F94.3
+00DA:  MOVLW  05
+00DC:  MOVWF  00
+00DE:  DECFSZ 00,F
+00E0:  BRA    00DE
+00E2:  BSF    F94.4
+00E4:  MOVLW  06
+00E6:  MOVWF  00
+00E8:  DECFSZ 00,F
+00EA:  BRA    00E8
+00EC:  BCF    F8B.3
+00EE:  BCF    F94.3
+00F0:  MOVLW  05
+00F2:  MOVWF  00
+00F4:  DECFSZ 00,F
+00F6:  BRA    00F4
+00F8:  BCF    F8B.4
+00FA:  BCF    F94.4
+....................     i2c_write(0b01000000); // Envoyer l'adresse du PCF8574 en mode écriture 
+00FC:  MOVLW  40
+00FE:  MOVWF  05
+0100:  RCALL  0004
+....................     i2c_start(); 
+0102:  BSF    F94.3
+0104:  MOVLW  05
+0106:  MOVWF  00
+0108:  DECFSZ 00,F
+010A:  BRA    0108
+010C:  BSF    F94.4
+010E:  MOVLW  06
+0110:  MOVWF  00
+0112:  DECFSZ 00,F
+0114:  BRA    0112
+0116:  BTFSS  F82.4
+0118:  BRA    0116
+011A:  BCF    F8B.3
+011C:  BCF    F94.3
+011E:  MOVLW  05
+0120:  MOVWF  00
+0122:  DECFSZ 00,F
+0124:  BRA    0122
+0126:  BCF    F8B.4
+0128:  BCF    F94.4
+....................     i2c_write(0b01000000 | 1); // Envoyer l'adresse du PCF8574 en mode lecture 
+012A:  MOVLW  41
+012C:  MOVWF  05
+012E:  RCALL  0004
+....................    data = i2c_read(0); // Lire les données et envoyer un NACK (0) à la fin 
+0130:  CLRF   00
+0132:  BRA    0070
+0134:  MOVFF  01,04
+....................     i2c_stop(); 
+0138:  BCF    F94.3
+013A:  NOP   
+013C:  BSF    F94.4
+013E:  BTFSS  F82.4
+0140:  BRA    013E
+0142:  MOVLW  05
+0144:  MOVWF  00
+0146:  DECFSZ 00,F
+0148:  BRA    0146
+014A:  BRA    014C
+014C:  NOP   
+014E:  BSF    F94.3
+0150:  MOVLW  05
+0152:  MOVWF  00
+0154:  DECFSZ 00,F
+0156:  BRA    0154
+....................     return data; 
+0158:  MOVFF  04,01
+015C:  GOTO   019E (RETURN)
+.................... } 
+....................  
+.................... void main() { 
+*
+0188:  CLRF   FF8
+018A:  BCF    FD0.7
+018C:  MOVF   FC1,W
+018E:  ANDLW  C0
+0190:  IORLW  0F
+0192:  MOVWF  FC1
+0194:  MOVLW  07
+0196:  MOVWF  FB4
+....................     output_float(PIN_C3); 
+0198:  BSF    F94.3
+....................     output_float(PIN_C4); 
+019A:  BSF    F94.4
+....................  
+....................     while (true) { 
+....................         // Lire l'état des interrupteurs depuis le PCF8574 
+....................        data = read_switches(); 
+019C:  BRA    00D8
+019E:  MOVFF  01,04
+....................  
+....................         // Afficher l'état des interrupteurs sur les LED 
+....................         output_b(data); // Affichez l'état des interrupteurs sur les LED de la carte EB004 
+01A2:  CLRF   F93
+01A4:  MOVFF  04,F8A
+....................  
+....................         delay_ms(100); // Attendre un certain temps avant de lire à nouveau les interrupteurs 
+01A8:  MOVLW  64
+01AA:  MOVWF  05
+01AC:  BRA    0160
+01AE:  BRA    019C
+....................     } 
+.................... } 
+....................  
+01B0:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C200   HS FCMEN IESO
+   Word  2: 1E1E   PUT BROWNOUT BORV21 NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 0081   STVREN NOLVP NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB
