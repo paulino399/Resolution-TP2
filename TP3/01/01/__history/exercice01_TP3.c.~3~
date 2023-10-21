@@ -8,7 +8,7 @@ void main()
 {
 output_float(PIN_C3); // mise en sortie collecteur ouvert de la broche RC...
 output_float(PIN_C4); // mise en sortie collecteur ouvert de la broche RC...
-DATA0 = 90; // donné à  stocker
+DATA0 = 90; // donnÃ©e Ã  stocker
 // Ecriture en mÃ©moire Ã  l'adresse AD_MEM de la donnÃ©e DATA0
 
   //le code pour le cahier de charge 1 on doit le modifier de façon à l'adaputeur au codigo réel

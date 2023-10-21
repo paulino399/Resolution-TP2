@@ -4,27 +4,25 @@
 002     @SCRATCH
 003     @SCRATCH
 004     DATA0
-005     DATA1
-006-007 AD_MEM
-008     @I2C_WRITE_1.P1
-008     @delay_ms1.P2
+005     @delay_ms1.P1
+005     @I2C_WRITE_1.P2
 F83     PSP_DATA
 FB4.6   C1OUT
 FB4.7   C2OUT
-FBB     CCP_2_LOW
 FBB     CCP_2
+FBB     CCP_2_LOW
 FBC     CCP_2_HIGH
-FBE     CCP_1
 FBE     CCP_1_LOW
+FBE     CCP_1
 FBF     CCP_1_HIGH
 FE1-FE2 @WRITE_PACKED_MEMORY.P1
 FE1-FE2 @READ_PACKED_MEMORY.P2
-FE9-FEA @READ_PROGRAM_MEMORY.P1
-FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
 FE9-FEA @WRITE_PACKED_MEMORY.P3
-FE9-FEA @WRITE_PROGRAM_MEMORY.P4
-FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
-FF6-FF8 @READ_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
 
 ROM Allocation:
 000004  @I2C_WRITE_1
@@ -37,13 +35,13 @@ Project Directory:
     C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\TP3\01\01\
 
 Project Files:
-    exercice01_TP3.c                                        [21-oct.-23 07:56  CRC=5C2E7022]
+    exercice01_TP3.c                                        [21-oct.-23 08:17  CRC=EEE97636]
     ..\..\..\..\..\..\..\..\Simestre II\Informatique\PIC_C_Compiler\PICC\Devices\18f4520.h [22-avr.-23 21:01  CRC=7B5E14DB]
 
-Source signature=52EA99D8
+Source signature=E5A59FEC
 Program memory checksum=0000
 Program memory CRC=0000
-Hex file CRC=0F4F
+Hex file CRC=EF81
 
 Units:
     exercice01_TP3 (main)

@@ -7,7 +7,7 @@ unsigned int16 AD_MEM;
 
 // Fonction pour envoyer un octet au PCF8574
 void output_portF(unsigned int8 data) {
-    i2c_start();
+   i2c_start();
     i2c_write(0b01000000); // Adresse du PCF8574 en mode écriture
     i2c_write(DATA0);       // Envoi de l'octet de données
     i2c_stop();

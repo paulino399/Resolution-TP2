@@ -38,13 +38,13 @@ Project Directory:
     C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\TP3\01\
 
 Project Files:
-    exercice1.c                                             [21-oct.-23 08:12  CRC=89614D41]
+    exercice1.c                                             [21-oct.-23 08:15  CRC=3ED8D8F3]
     ..\..\..\..\..\..\..\Simestre II\Informatique\PIC_C_Compiler\PICC\Devices\18f4520.h [22-avr.-23 21:01  CRC=7B5E14DB]
 
-Source signature=801D76F7
+Source signature=359502A9
 Program memory checksum=0000
 Program memory CRC=0000
-Hex file CRC=1480
+Hex file CRC=FDF4
 
 Units:
     exercice1 (main)

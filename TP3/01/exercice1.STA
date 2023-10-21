@@ -13,10 +13,10 @@ Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   29    12 100  exercice1.c
+   30    12 100  exercice1.c
   844     0   0  ..\..\..\..\..\..\..\Simestre II\Informatique\PIC_C_Compiler\PICC\Devices\18f4520.h
 ----- -----
-  873    12 Total
+  874    12 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------

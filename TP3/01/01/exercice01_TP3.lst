@@ -1,11 +1,11 @@
-CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 07:56
+CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 08:17
 
                Filename:   C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\ResoluÁ„o\Resolution TP2\TP3\01\01\exercice01_TP3.lst
 
-               ROM used:   272 bytes (1%)
-                           Largest free fragment is 32496
-               RAM used:   8 (1%) at main() level
-                           9 (1%) worst case
+               ROM used:   266 bytes (1%)
+                           Largest free fragment is 32502
+               RAM used:   5 (0%) at main() level
+                           6 (0%) worst case
                Stack used: 0 locations
                Stack size: 31
 
@@ -31,7 +31,7 @@ CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 07:56
 .................... #use delay(crystal=20MHz) 
 *
 0070:  CLRF   FEA
-0072:  MOVLW  08
+0072:  MOVLW  05
 0074:  MOVWF  FE9
 0076:  MOVF   FEF,W
 0078:  BZ    0094
@@ -48,7 +48,7 @@ CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 07:56
 008E:  BRA    008C
 0090:  DECFSZ FEF,F
 0092:  BRA    007A
-0094:  GOTO   010C (RETURN)
+0094:  GOTO   0106 (RETURN)
 .................... #use i2c(master, sda=PIN_C3, scl=PIN_C4) // configuration du bus I2C en MAITRE avec utilisation du module I2C interne 
 *
 0004:  MOVLW  08
@@ -63,7 +63,7 @@ CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 07:56
 0016:  MOVWF  00
 0018:  DECFSZ 00,F
 001A:  BRA    0018
-001C:  RLCF   08,F
+001C:  RLCF   05,F
 001E:  BCF    F8B.3
 0020:  BTFSC  FD8.0
 0022:  BSF    F94.3
@@ -105,8 +105,7 @@ CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 07:56
 006A:  BCF    F8B.3
 006C:  BCF    F94.3
 006E:  RETURN 0
-.................... unsigned int8 DATA0,DATA1; 
-.................... unsigned int16 AD_MEM; 
+.................... unsigned int8 DATA0; 
 .................... void main() 
 *
 0098:  CLRF   FF8
@@ -122,69 +121,65 @@ CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 07:56
 00A8:  BSF    F94.3
 .................... output_float(PIN_C4); // mise en sortie collecteur ouvert de la broche RC... 
 00AA:  BSF    F94.4
-.................... AD_MEM =0x40;// 0x01F0; // adresse m√©moire o√π l'on veut stocker la donn√©e 
-00AC:  CLRF   07
-00AE:  MOVLW  40
-00B0:  MOVWF  06
-.................... DATA0 = 90; // donn√©e √† stocker 
-00B2:  MOVLW  5A
-00B4:  MOVWF  04
+.................... DATA0 = 90; // donnÈ ‡† stocker 
+00AC:  MOVLW  5A
+00AE:  MOVWF  04
 .................... // Ecriture en m√©moire √† l'adresse AD_MEM de la donn√©e DATA0 
 ....................  
 ....................   //le code pour le cahier de charge 1 on doit le modifier de faÁon ‡ l'adaputeur au codigo rÈel 
 .................... while(true) 
 .................... { 
 .................... i2c_start(); 
-00B6:  BSF    F94.3
-00B8:  MOVLW  05
-00BA:  MOVWF  00
-00BC:  DECFSZ 00,F
-00BE:  BRA    00BC
-00C0:  BSF    F94.4
-00C2:  MOVLW  06
-00C4:  MOVWF  00
-00C6:  DECFSZ 00,F
-00C8:  BRA    00C6
-00CA:  BCF    F8B.3
-00CC:  BCF    F94.3
-00CE:  MOVLW  05
-00D0:  MOVWF  00
-00D2:  DECFSZ 00,F
-00D4:  BRA    00D2
-00D6:  BCF    F8B.4
-00D8:  BCF    F94.4
+00B0:  BSF    F94.3
+00B2:  MOVLW  05
+00B4:  MOVWF  00
+00B6:  DECFSZ 00,F
+00B8:  BRA    00B6
+00BA:  BSF    F94.4
+00BC:  MOVLW  06
+00BE:  MOVWF  00
+00C0:  DECFSZ 00,F
+00C2:  BRA    00C0
+00C4:  BCF    F8B.3
+00C6:  BCF    F94.3
+00C8:  MOVLW  05
+00CA:  MOVWF  00
+00CC:  DECFSZ 00,F
+00CE:  BRA    00CC
+00D0:  BCF    F8B.4
+00D2:  BCF    F94.4
 .................... i2c_write(0b01000000); //i2c_write(0b10100000);  // CONTROL BYTE = adresse 0b1010000 + 0 pour l'√©criture (=0xA0=160) 
-00DA:  MOVLW  40
-00DC:  MOVWF  08
-00DE:  RCALL  0004
+00D4:  MOVLW  40
+00D6:  MOVWF  05
+00D8:  RCALL  0004
 .................... i2c_write(DATA0); // √©criture de la donn√©e √† l'adresse d√©finie auparavant 
-00E0:  MOVFF  04,08
-00E4:  RCALL  0004
+00DA:  MOVFF  04,05
+00DE:  RCALL  0004
 .................... i2c_stop(); 
-00E6:  BCF    F94.3
-00E8:  NOP   
-00EA:  BSF    F94.4
-00EC:  BTFSS  F82.4
-00EE:  BRA    00EC
-00F0:  MOVLW  05
-00F2:  MOVWF  00
-00F4:  DECFSZ 00,F
-00F6:  BRA    00F4
-00F8:  BRA    00FA
-00FA:  NOP   
-00FC:  BSF    F94.3
-00FE:  MOVLW  05
-0100:  MOVWF  00
-0102:  DECFSZ 00,F
-0104:  BRA    0102
+00E0:  BCF    F94.3
+00E2:  NOP   
+00E4:  BSF    F94.4
+00E6:  BTFSS  F82.4
+00E8:  BRA    00E6
+00EA:  MOVLW  05
+00EC:  MOVWF  00
+00EE:  DECFSZ 00,F
+00F0:  BRA    00EE
+00F2:  BRA    00F4
+00F4:  NOP   
+00F6:  BSF    F94.3
+00F8:  MOVLW  05
+00FA:  MOVWF  00
+00FC:  DECFSZ 00,F
+00FE:  BRA    00FC
 .................... delay_ms(10); 
-0106:  MOVLW  0A
-0108:  MOVWF  08
-010A:  BRA    0070
-010C:  BRA    00B6
+0100:  MOVLW  0A
+0102:  MOVWF  05
+0104:  BRA    0070
+0106:  BRA    00B0
 .................... } 
 .................... } 
-010E:  SLEEP 
+0108:  SLEEP 
 
 Configuration Fuses:
    Word  1: C200   HS FCMEN IESO

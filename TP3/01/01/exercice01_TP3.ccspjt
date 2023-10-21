@@ -9,15 +9,31 @@ FileList=exercice01_TP3.c
 Type=4
 [mru-list]
 1=exercice01_TP3.c
-[Units]
-Count=1
-1=exercice01_TP3 (main)
 
 [defines]
-buildcount=1
+buildcount=4
 
 [ProjectLog]
 Days=1
 D1=21-10-2023
-D1_L=1
+D1_L=4
 D1_L1=[28954]Stopped Editing.
+TotalEdit=7
+TotalDebug=0
+D1_E=7
+D1_D=0
+D1_L2=[29816]Started Editing.
+D1_L3=[29823]Stopped Editing.
+D1_L4=[29836]Started Editing.
+
+[Opened Files]
+1=exercice01_TP3.c
+t1=1
+2=..\exercice1.c
+t2=5
+3=..\02\exercice_2_TP3.c
+t3=1
+Count=3
+[Units]
+Count=1
+1=exercice01_TP3 (main)
