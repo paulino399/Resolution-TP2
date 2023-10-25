@@ -1,10 +1,10 @@
-F N "main" 0 18 ""
-D G "__PCH__" 0 34 ""5.059""
-D G "__DEVICE__" 0 34 "4520"
-D G "__DATE__" 0 34 ""21-oct.-23""
-D G "__TIME__" 0 34 ""08:46:11""
-D G "_UNICODE" 0 34 ""?""
-D G "__EVAL" 0 34 ""?"" "On désire afficher sur les leds d'une carte EB004 (LED board) connectée à un"
+F N "main" 0 22 ""
+D G "__PCH__" 0 37 ""5.059""
+D G "__DEVICE__" 0 37 "4520"
+D G "__DATE__" 0 37 ""25-oct.-23""
+D G "__TIME__" 0 37 ""11:09:06""
+D G "_UNICODE" 0 37 ""?""
+D G "__EVAL" 0 37 ""?"" "On désire toujours allumer les leds 1, 3, 4 et 6 sur la carte 8 LEDS par"
 c L "set_tris_a" 1 1 6 "FUNCTION"
 f N "set_tris_a" 1 43 ""
 v L "value" 1 43 "int8" `54 
@@ -1194,17 +1194,17 @@ d G "INT_COMP" 1 838 "0x00A040"
 d G "INT_EEPROM" 1 839 "0x00A010"
 d G "INT_OSCF" 1 840 "0x00A080"
 d G "INT_HLVD" 1 841 "0x00A004"
-V G "data" 0 11 "int8" `630  "Fonction pour lire l'état des interrupteurs du PCF8574"
-F N "read_switches" 0 14 ""
-F G "read_switches" 0 14 "int8()" `631 
-C L "read_switches" 0 16 1 "FUNCTION"
-C L "read_switches" 0 16 1 "FUNCTION"
-C L "read_switches" 0 16 1 "FUNCTION"
-F N "main" 0 24 ""
-F G "main" 0 24 "void()" `632 
-C L "main" 0 16 1 "FUNCTION"
-C L "main" 0 16 1 "FUNCTION"
-C L "main" 0 16 1 "FUNCTION"
+V G "DATA" 0 12 "int8" `630  "Fonction pour envoyer un octet au PCF8574"
+F N "output_portF" 0 15 ""
+V L "data" 0 15 "int8" `632 
+F G "output_portF" 0 15 "void(int8 data)" `631 
+C L "output_portF" 0 17 1 "FUNCTION"
+C L "output_portF" 0 17 1 "FUNCTION"
+F N "main" 0 22 ""
+F G "main" 0 22 "void()" `633 
+C L "main" 0 17 1 "FUNCTION"
+C L "main" 0 17 1 "FUNCTION"
+C L "main" 0 17 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

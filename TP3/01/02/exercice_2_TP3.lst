@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 09:07
+CCS PCH C Compiler, Version 5.059, 5967               25-oct.-23 10:43
 
                Filename:   C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\TP3\01\02\exercice_2_TP3.lst
 
@@ -175,7 +175,7 @@ CCS PCH C Compiler, Version 5.059, 5967               21-oct.-23 09:07
 00FC:  BSF    F94.3
 ....................     output_float(PIN_C4); 
 00FE:  BSF    F94.4
-....................     DATA0 = 90; 
+....................     DATA0 = 90; // en decimal 
 0100:  MOVLW  5A
 0102:  MOVWF  04
 ....................  
