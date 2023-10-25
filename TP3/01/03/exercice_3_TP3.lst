@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.059, 5967               25-oct.-23 11:15
+CCS PCH C Compiler, Version 5.059, 5967               25-oct.-23 11:19
 
                Filename:   C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\TP3\01\03\exercice_3_TP3.lst
 
@@ -114,7 +114,7 @@ CCS PCH C Compiler, Version 5.059, 5967               25-oct.-23 11:15
 .................... unsigned int8 DATA; 
 ....................  
 .................... // Fonction pour envoyer un octet au PCF8574 
-.................... void output_portF(unsigned int8 data) { 
+.................... void output_portF(unsigned int8 DATA) { 
 ....................     i2c_start(); 
 0070:  BSF    F94.3
 0072:  MOVLW  05
@@ -175,14 +175,13 @@ CCS PCH C Compiler, Version 5.059, 5967               25-oct.-23 11:15
 00FC:  BSF    F94.3
 ....................     output_float(PIN_C4); 
 00FE:  BSF    F94.4
-....................    // DATA0 = 90; // en decimal 
+....................     DATA= input_b(); 
+0100:  SETF   F93
+0102:  MOVFF  F81,04
 ....................  
 ....................     while (true) { 
 ....................         // Appel de la fonction pour envoyer l'octet vers le PCF8574 
 ....................          
-....................         DATA= input_b(); 
-0100:  SETF   F93
-0102:  MOVFF  F81,04
 ....................         output_portF(DATA); // Configuration pour allumer les LEDs 1, 3, 4 et 6 
 0106:  MOVFF  04,05
 010A:  BRA    0070
@@ -190,7 +189,7 @@ CCS PCH C Compiler, Version 5.059, 5967               25-oct.-23 11:15
 010C:  MOVLW  0A
 010E:  MOVWF  05
 0110:  BRA    00C4
-0112:  BRA    0100
+0112:  BRA    0106
 ....................     } 
 .................... } 
 ....................  

@@ -1,7 +1,7 @@
 D G "__PCH__" 0 37 ""5.059""
 D G "__DEVICE__" 0 37 "4520"
 D G "__DATE__" 0 37 ""25-oct.-23""
-D G "__TIME__" 0 37 ""11:15:20""
+D G "__TIME__" 0 37 ""11:19:23""
 D G "_UNICODE" 0 37 ""?""
 D G "__EVAL" 0 37 ""?"" "On désire toujours allumer les leds 1, 3, 4 et 6 sur la carte 8 LEDS par"
 c L "set_tris_a" 1 1 6 "FUNCTION"
@@ -1195,13 +1195,12 @@ d G "INT_OSCF" 1 840 "0x00A080"
 d G "INT_HLVD" 1 841 "0x00A004"
 V G "DATA" 0 12 "int8" `630  "Fonction pour envoyer un octet au PCF8574"
 F N "output_portF" 0 15 ""
-V L "data" 0 15 "int8" `632 
-F G "output_portF" 0 15 "void(int8 data)" `631 
+V L "DATA" 0 15 "int8" `632 
+F G "output_portF" 0 15 "void(int8 DATA)" `631 
 C L "output_portF" 0 17 1 "FUNCTION"
 C L "output_portF" 0 17 1 "FUNCTION"
 F N "main" 0 22 ""
 F G "main" 0 22 "void()" `633 
-C L "main" 0 17 1 "FUNCTION"
 C L "main" 0 17 1 "FUNCTION"
 C L "main" 0 17 1 "FUNCTION"
 F B "reset_cpu" 0 0

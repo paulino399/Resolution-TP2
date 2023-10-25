@@ -13,10 +13,10 @@ Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   36    11 100  exercice_3_TP3.c
+   35    11 100  exercice_3_TP3.c
   844     0   0  ..\..\..\..\..\..\..\..\Simestre II\Informatique\PIC_C_Compiler\PICC\Devices\18f4520.h
 ----- -----
-  880    11 Total
+  879    11 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
@@ -29,7 +29,7 @@ Page ROM  %  RAM    Vol Diff  Functions:
 Program metrics:
     Functions               2
     Statements              11
-    Comments                169
+    Comments                168
     Volume (V)              236
     Difficulty (D)          3.0
     Effort to implement (E) 699

@@ -12,7 +12,7 @@
 unsigned int8 DATA;
 
 // Fonction pour envoyer un octet au PCF8574
-void output_portF(unsigned int8 DATA) {
+void output_portF(unsigned int8 data) {
     i2c_start();
     i2c_write(0b01000000); // Adresse du PCF8574 en mode écriture
     i2c_write(DATA);       // Envoi de l'octet de données
@@ -22,11 +22,12 @@ void output_portF(unsigned int8 DATA) {
 void main() {
     output_float(PIN_C3);
     output_float(PIN_C4);
-    DATA= input_b();
+   // DATA0 = 90; // en decimal
 
     while (true) {
         // Appel de la fonction pour envoyer l'octet vers le PCF8574
         
+        DATA= input_b();
         output_portF(DATA); // Configuration pour allumer les LEDs 1, 3, 4 et 6
         delay_ms(10);
     }
