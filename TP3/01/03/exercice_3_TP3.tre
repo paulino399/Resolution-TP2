@@ -1,6 +1,7 @@
 ÀÄexercice_3_TP3
    ÀÄmain  0/42  Ram=0
       ÃÄ@cinit1  (Inline)  Ram=0
-      ÃÄoutput_portF  0/78  Ram=1
-      ³  ÀÄ@I2C_WRITE_1  0/110  Ram=1
+      ÃÄoutput_portF  0/84  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/108  Ram=1
+      ³  ÀÄ@I2C_WRITE_1  0/108  Ram=1
       ÀÄ@delay_ms1  0/40  Ram=1
