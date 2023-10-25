@@ -27,23 +27,23 @@ FF6-FF8 @READ_PROGRAM_MEMORY.P2
 
 ROM Allocation:
 000004  @I2C_WRITE_1
-000070  output_portF
-0000C4  @delay_ms1
-0000EC  main
-0000EC  @cinit1
-0000FC  @cinit2
+000072  output_portF
+0000C0  @delay_ms1
+0000E8  main
+0000E8  @cinit1
+0000F8  @cinit2
 
 Project Directory:
     C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\TP3\01\03\
 
 Project Files:
-    exercice_3_TP3.c                                        [25-oct.-23 11:09  CRC=03FD2BF8]
+    exercice_3_TP3.c                                        [25-oct.-23 11:13  CRC=B53B1747]
     ..\..\..\..\..\..\..\..\Simestre II\Informatique\PIC_C_Compiler\PICC\Devices\18f4520.h [22-avr.-23 21:01  CRC=7B5E14DB]
 
-Source signature=FAB955AE
+Source signature=ABF740FD
 Program memory checksum=0000
 Program memory CRC=0000
-Hex file CRC=8A60
+Hex file CRC=8999
 
 Units:
     exercice_3_TP3 (main)

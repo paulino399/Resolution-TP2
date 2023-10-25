@@ -11,7 +11,7 @@ Type=4
 1=exercice_3_TP3.c
 
 [defines]
-buildcount=10
+buildcount=11
 
 [ProjectLog]
 Days=2
@@ -29,7 +29,7 @@ D1_L9=[33484]Stopped Editing.
 D1_L10=[39060]Started Editing.
 D1_L11=[39148]Project Closed.
 D2=25-10-2023
-D2_L=7
+D2_L=8
 D2_L1=[39487]Project Opened.
 D2_L2=[39578]Started Editing.
 D2_L3=[40215]Stopped Editing.
@@ -41,6 +41,7 @@ D2_L4=[40215]Project Closed.
 D2_L5=[40228]Project Opened.
 D2_L6=[40229]Project Closed.
 D2_L7=[40230]Project Opened.
+D2_L8=[40379]Started Editing.
 
 [Opened Files]
 1=..\01\exercice01_TP3.c
