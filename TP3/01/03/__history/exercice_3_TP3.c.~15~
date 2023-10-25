@@ -22,11 +22,11 @@ void output_portF(unsigned int8 DATA) {
 void main() {
     output_float(PIN_C3);
     output_float(PIN_C4);
-    
+    DATA= input_b();
 
     while (true) {
         // Appel de la fonction pour envoyer l'octet vers le PCF8574
-        DATA= input_b();
+        
         output_portF(DATA); // Configuration pour allumer les LEDs 1, 3, 4 et 6
         delay_ms(10);
     }

@@ -14,7 +14,7 @@ unsigned int8 DATA;
 // Fonction pour envoyer un octet au PCF8574
 void output_portF(unsigned int8 DATA) {
     i2c_start();
-    i2c_write(0b01000000); // Adresse du PCF8574 en mode écriture
+    i2c_write(0b010000000); // Adresse du PCF8574 en mode écriture
     i2c_write(DATA);       // Envoi de l'octet de données
     i2c_stop();
 }
