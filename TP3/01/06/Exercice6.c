@@ -5,3 +5,21 @@
 #use delay(crystal=20MHz)
 #use i2c(master, sda=PIN_C3, scl=PIN_C4)
 unsigned int8 DATA0;
+
+void main()
+{
+output_float(PIN_C3); // mise en sortie collecteur ouvert de la broche RC...
+output_float(PIN_C4); // mise en sortie collecteur ouvert de la broche RC...
+DATA0 = 90; // donnÈ ‡† stocker
+// Ecriture en m√©moire √† l'adresse AD_MEM de la donn√©e DATA0
+
+  //le code pour le cahier de charge 1 on doit le modifier de faÁon ‡ l'adaputeur au codigo rÈel
+while(true)
+{
+i2c_start();
+i2c_write(0b01000000); //i2c_write(0b10100000);  // CONTROL BYTE = adresse 0b1010000 + 0 pour l'√©criture (=0xA0=160)
+i2c_write(DATA0); // √©criture de la donn√©e √† l'adresse d√©finie auparavant
+i2c_stop();
+delay_ms(10);
+   }
+}
