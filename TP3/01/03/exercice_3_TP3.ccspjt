@@ -14,7 +14,7 @@ Type=4
 buildcount=19
 
 [ProjectLog]
-Days=2
+Days=3
 D1=21-10-2023
 D1_L=11
 D1_L1=[30662]Started Editing.
@@ -45,6 +45,15 @@ D2_L8=[40379]Started Editing.
 D2_L9=[41443]Stopped Editing.
 D2_L10=[41949]Started Editing.
 D2_L11=[42249]Stopped Editing.
+D3=27-10-2023
+D3_L=7
+D3_L1=[36083]Project Opened.
+D3_L2=[36084]Project Closed.
+D3_L3=[36085]Project Opened.
+D3_L4=[36436]Started Editing.
+D3_L5=[36736]Stopped Editing.
+D3_L6=[66204]Started Editing.
+D3_L7=[66504]Stopped Editing.
 
 [Opened Files]
 1=..\01\exercice01_TP3.c
