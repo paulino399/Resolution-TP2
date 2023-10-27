@@ -23,6 +23,5 @@ i2c_write(0b01000000); //i2c_write(0b10100000);  // CONTROL BYTE = adresse 0b101
 i2c_write(DATA0); // écriture de la donnée à l'adresse définie auparavant
 i2c_stop();
 delay_ms(10);
-output_d =i2c_write(0b01000000) ;
-}
+   }
 }

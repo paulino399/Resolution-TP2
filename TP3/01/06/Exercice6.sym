@@ -1,0 +1,69 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     DATA0
+005     TEMPO
+006     @I2C_WRITE_1.P1
+006     @delay_ms1.P2
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @I2C_WRITE_1
+000070  @delay_ms1
+000098  main
+000098  @cinit1
+0000A8  @cinit2
+
+Project Directory:
+    C:\Users\pj517\Desktop\PRIMEIRO ANO GEII\II ANO\S3\Informatica\Resolução\Resolution TP2\TP3\01\06\
+
+Project Files:
+    Exercice6.c                                             [27-oct.-23 23:40  CRC=B1B217DE]
+    ..\..\..\..\..\..\..\..\Simestre II\Informatique\PIC_C_Compiler\PICC\Devices\18f4520.h [22-avr.-23 21:01  CRC=7B5E14DB]
+
+Source signature=A86E4194
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=6F14
+
+Units:
+    Exercice6 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4520
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   Exercice6.xsym
+    Errors:      Exercice6.err
+    Ext Symbols: Exercice6.esym
+    INHX32:      Exercice6.hex
+    Symbols:     Exercice6.sym
+    List:        Exercice6.lst
+    Debug/COFF:  Exercice6.cof
+    Project:     Exercice6.ccspjt
+    Call Tree:   Exercice6.tre
+    Statistics:  Exercice6.STA

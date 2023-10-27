@@ -9,7 +9,7 @@
 #use delay(crystal=20MHz)
 #use i2c(master, sda=PIN_C3, scl=PIN_C4)
 
-unsigned int8 DATA
+unsigned int8 DATA;
 
 // Fonction pour envoyer un octet au PCF8574
 void output_portF(unsigned int8 DATA) {
@@ -22,6 +22,7 @@ void output_portF(unsigned int8 DATA) {
 void main() {
     output_float(PIN_C3);
     output_float(PIN_C4);
+    
 
     while (true) {
         // Appel de la fonction pour envoyer l'octet vers le PCF8574
