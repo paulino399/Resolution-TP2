@@ -5,7 +5,7 @@
 #use delay(crystal=20MHz)
 #use i2c(master, sda=PIN_C3, scl=PIN_C4)
 unsigned int8 DATA0;
-unsigned int8 TEMPO, DATA;
+unsigned int8 TEMPO;
 //F=2, T= 0.5s =500ms
 
 void main()
@@ -22,8 +22,7 @@ i2c_start();
 i2c_write(0b01000000); //i2c_write(0b10100000);  // CONTROL BYTE = adresse 0b1010000 + 0 pour l'écriture (=0xA0=160)
 i2c_write(DATA0); // écriture de la donnée à l'adresse définie auparavant
 i2c_stop();
-DATA= i2c_write(0b01000000);
 delay_ms(10);
-outoput_d(DATA);
+output_d =i2c_write(0b01000000) ;
 }
 }

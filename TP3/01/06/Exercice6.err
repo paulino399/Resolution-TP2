@@ -1,1 +1,3 @@
-*** Error 49 "Exercice6.c" Line 26(1,9): Expecting LVALUE such as a variable name  or  * expression
+*** Error 12 "Exercice6.c" Line 27(10,11): Undefined identifier  -- outoput_d
+      1 Errors,  0 Warnings.
+Build Failed.

@@ -1,10 +1,9 @@
-F N "main" 0 22 ""
-D G "__PCH__" 0 35 ""5.059""
-D G "__DEVICE__" 0 35 "4520"
-D G "__DATE__" 0 35 ""27-oct.-23""
-D G "__TIME__" 0 35 ""23:44:24""
-D G "_UNICODE" 0 35 ""?""
-D G "__EVAL" 0 35 ""?"" "Cahier des charges : On désire faire clignoter à 2Hz les 8 leds de la carte 8"
+D G "__PCH__" 0 32 ""5.059""
+D G "__DEVICE__" 0 32 "4520"
+D G "__DATE__" 0 32 ""27-oct.-23""
+D G "__TIME__" 0 32 ""23:50:57""
+D G "_UNICODE" 0 32 ""?""
+D G "__EVAL" 0 32 ""?"" "Cahier des charges : On désire faire clignoter à 2Hz les 8 leds de la carte 8"
 c L "set_tris_a" 1 1 6 "FUNCTION"
 f N "set_tris_a" 1 43 ""
 v L "value" 1 43 "int8" `54 
@@ -1195,9 +1194,10 @@ d G "INT_EEPROM" 1 839 "0x00A010"
 d G "INT_OSCF" 1 840 "0x00A080"
 d G "INT_HLVD" 1 841 "0x00A004"
 V G "DATA0" 0 7 "int8" `630 
-V G "TEMPO" 0 8 "int8" `631  "F=2, T= 0.5s =500ms"
+V G "TEMPO" 0 8 "int8" `631 
+V G "DATA" 0 8 "int8" `632  "F=2, T= 0.5s =500ms"
 F N "main" 0 11 ""
-F G "main" 0 12 "void()" `632 
+F G "main" 0 12 "void()" `633 
 C L "main" 0 13 1 "FUNCTION"
 C L "main" 0 13 1 "FUNCTION"
 C L "main" 0 13 3 "FUNCTION"
